@@ -57,7 +57,7 @@ export default function Home() {
         </header>
       </div>
       {/* Hero */}
-      <div className="bg-[#F06827] relative">
+      <div className="bg-[#F06827] relative ">
         <img
           src="/hero-shape1.svg"
           alt="hero shape"
@@ -69,7 +69,24 @@ export default function Home() {
           alt="hero shape"
           className="absolute left-0 ltr:right-0"
         />
-        <div className="h-[750px] max-w-[1440px] mx-auto"></div>
+        <div className=" max-w-[1440px] pb-[125px] pt-[210px] mx-auto flex flex-col justify-end items-center px-[20px] gap-[60px]">
+          <h1 className="display2-bold text-white text-center">
+            لبيب .. رحلة من الإلهام إلى الحياة
+          </h1>
+          <div className="flex items-center justify-center gap-[50px] flex-wrap ">
+            {" "}
+            <div className="text-white max-w-[522px] h4-medium text-center xl:text-start">
+              مع كل تجربة، نزرع الإلهام في عقول الأطفال وقلوبهم، لتزهر طموحاتهم
+              وتشكل ملامح المستقبل. ندمج قيم الماضي برؤية مبتكرة تبني جسورًا بين
+              الأجيال، لتحوّل كل طفل إلى بطلٍ يكتب فصول النجاح والشغف.رحلتنا
+              تترك أثرًا دائمًا، تُلهم الأطفال ليحلموا، يُبدعوا، ويصنعوا تغييرًا
+              يترك بصمة في عالمهم.
+            </div>
+            <div className="max-w-[568px] w-full ">
+              <img src="/hero-img.svg" alt="hero image" className="w-full" />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

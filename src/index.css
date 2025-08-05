@@ -3,3 +3,11 @@
 .body-medium {
   @apply leading-[27px] text-base font-[700];
 }
+
+.display2-bold {
+  @apply text-[40px] lg:text-[55px] xl:text-[72px] leading-[48px] lg:leading-[83px] font-[900];
+}
+
+.h4-medium {
+  @apply text-[24px] leading-[34px] font-[700];
+}
