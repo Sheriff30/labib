@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Fields from "./components/Fields";
 import Initiatives from "./components/Initiatives";
 import Form from "./components/Form";
+import Register from "./components/register";
 
 export default function Page() {
   return (
@@ -27,6 +28,8 @@ export default function Page() {
       <Initiatives />
       {/* Form */}
       <Form />
+      {/* Register */}
+      <Register />
     </>
   );
 }
