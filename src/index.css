@@ -1,7 +1,54 @@
 @import "tailwindcss";
 
+/* Custom Fonts */
+@font-face {
+  font-family: "Labeeb-Arabic";
+  src: url("/fonts/Labeeb-Arabic-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Labeeb-Arabic";
+  src: url("/fonts/Labeeb-Arabic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Labeeb-Arabic";
+  src: url("/fonts/Labeeb-Arabic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Labeeb-English";
+  src: url("/fonts/Labeeb-English-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Labeeb-English";
+  src: url("/fonts/Labeeb-English-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Labeeb-English";
+  src: url("/fonts/Labeeb-English-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: "Labeeb-Arabic", sans-serif;
+}
+
 .body-medium {
-  @apply leading-[27px] text-base font-[700];
+  @apply leading-[27px] text-base;
 }
 
 .display2-bold {
@@ -9,5 +56,30 @@
 }
 
 .h4-medium {
-  @apply text-[24px] leading-[34px] font-[700];
+  @apply text-[24px] leading-[34px];
+}
+
+.h2-bold {
+  @apply text-[30px] lg:text-[40px]  leading-[36px] lg:leading-[52px] font-[900];
+}
+
+.h3-bold-english {
+  @apply text-[24px] leading-[29px] font-medium;
+  font-family: "Labeeb-English", sans-serif;
+}
+
+.titles-medium {
+  @apply text-[18px] leading-[29px];
+}
+
+.h1-bold {
+  @apply font-bold text-[48px] leading-[60px];
+}
+
+.h3-Light {
+  @apply font-light text-[24px] lg:text-[32px] leading-[32px] lg:leading-[42px];
+}
+
+.cta-large {
+  @apply text-[16px] leading-[27px] font-[900];
 }

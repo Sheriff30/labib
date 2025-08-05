@@ -1,4 +1,5 @@
 import React from "react";
+import About from "./components/About";
 
 export default function Home() {
   const navItems = [
@@ -88,6 +89,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* About */}
+      <About />
     </>
   );
 }
