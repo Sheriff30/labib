@@ -5,6 +5,7 @@ import Testimonials from "./components/Testimonials";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Fields from "./components/Fields";
+import Initiatives from "./components/Initiatives";
 
 export default function Page() {
   return (
@@ -21,6 +22,8 @@ export default function Page() {
       <Testimonials />
       {/* Fields */}
       <Fields />
+      {/* Initiatives */}
+      <Initiatives />
     </>
   );
 }
