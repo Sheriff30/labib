@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -28,6 +28,8 @@ export default function Partners() {
             }}
             spaceBetween={134}
             slidesPerView={1}
+            speed={1000}
+            loop={true}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -46,7 +48,6 @@ export default function Partners() {
                 spaceBetween: 134,
               },
             }}
-            speed={1000}
           >
             <SwiperSlide className="!flex justify-center items-center">
               <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />

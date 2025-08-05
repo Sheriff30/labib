@@ -1,6 +1,7 @@
 import React from "react";
 import About from "./components/About";
 import Partners from "./components/Partners";
+import Testimonials from "./components/Testimonials";
 
 export default function Page() {
   const navItems = [
@@ -94,6 +95,8 @@ export default function Page() {
       <About />
       {/* Partners */}
       <Partners />
+      {/* Testimonials */}
+      <Testimonials />
     </>
   );
 }

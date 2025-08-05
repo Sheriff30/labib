@@ -42,7 +42,7 @@ export default function About() {
         <div className="max-w-[1440px] mx-auto flex gap-[64px] items-center justify-between flex-col lg:flex-row">
           <div className="flex flex-col">
             <div className="h1-bold mb-[8px]">لبيب</div>
-            <p className="mb-[24px] h3-Light">
+            <p className="mb-[24px] h3-light">
               شركة سعودية رائدة في ابتكار وتطوير تجارب تعليمية ترفيهية وتفاعلية
               للأطفال، نعيد من خلالها تشكيل مفهوم التعلّم، عبر تجارب تجمع بين
               المعرفة، المتعة، والواقع.نصمم عوالم ملهمة تُسهم في تنمية وعي

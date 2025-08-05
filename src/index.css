@@ -76,8 +76,11 @@ body {
   @apply font-bold text-[48px] leading-[60px];
 }
 
-.h3-Light {
+.h3-light {
   @apply font-light text-[24px] lg:text-[32px] leading-[32px] lg:leading-[42px];
+}
+.h3-bold {
+  @apply font-bold text-[24px] lg:text-[32px] leading-[32px] lg:leading-[42px];
 }
 
 .cta-large {
