@@ -4,6 +4,7 @@ import Partners from "./components/Partners";
 import Testimonials from "./components/Testimonials";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
+import Fields from "./components/Fields";
 
 export default function Page() {
   return (
@@ -18,6 +19,8 @@ export default function Page() {
       <Partners />
       {/* Testimonials */}
       <Testimonials />
+      {/* Fields */}
+      <Fields />
     </>
   );
 }
