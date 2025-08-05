@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Fields from "./components/Fields";
 import Initiatives from "./components/Initiatives";
+import Form from "./components/Form";
 
 export default function Page() {
   return (
@@ -24,6 +25,8 @@ export default function Page() {
       <Fields />
       {/* Initiatives */}
       <Initiatives />
+      {/* Form */}
+      <Form />
     </>
   );
 }
