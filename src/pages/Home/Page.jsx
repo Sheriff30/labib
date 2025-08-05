@@ -1,7 +1,8 @@
 import React from "react";
 import About from "./components/About";
+import Partners from "./components/Partners";
 
-export default function Home() {
+export default function Page() {
   const navItems = [
     {
       label: "حكاية لبيب",
@@ -36,9 +37,9 @@ export default function Home() {
           />
 
           <ul className="flex gap-[40px] items-center">
-            {navItems.map((link) => {
+            {navItems.map((link, index) => {
               return (
-                <li key={link.href} className="cursor-pointer hidden lg:block">
+                <li key={index} className="cursor-pointer hidden lg:block">
                   <a href={link.href} className="body-medium">
                     {link.label}
                   </a>
@@ -91,6 +92,8 @@ export default function Home() {
       </div>
       {/* About */}
       <About />
+      {/* Partners */}
+      <Partners />
     </>
   );
 }
