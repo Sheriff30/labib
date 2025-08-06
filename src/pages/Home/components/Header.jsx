@@ -44,6 +44,10 @@ export default function Header() {
     style = isScrolled
       ? "bg-white/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md"
       : "bg-white fixed top-0 left-0 right-0 z-50";
+  } else {
+    style = isScrolled
+      ? "bg-white/70 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 shadow-md"
+      : "bg-white sticky top-0 left-0 right-0 z-50";
   }
 
   const paddingClass = isScrolled ? "py-[20px]" : "py-[20px] lg:py-[48px]";

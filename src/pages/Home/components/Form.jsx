@@ -2,8 +2,18 @@ import React from "react";
 
 export default function Form() {
   return (
-    <div className="py-[69px] px-[20px] bg-[#004D1E4A]">
-      <div className="max-w-[1000px] mx-auto flex flex-col lg:flex-row gap-[60px] lg:gap-[120px] items-center">
+    <div className="py-[69px] relative  bg-[#004D1E4A]">
+      <img
+        src="/form-shape1.svg"
+        alt="form-shape1"
+        className="absolute top-0 right-0"
+      />
+      <img
+        src="/form-shape2.svg"
+        alt="form-shape2"
+        className="absolute bottom-0 left-0 "
+      />
+      <div className="max-w-[1020px] px-[20px] mx-auto flex flex-col lg:flex-row gap-[60px] lg:gap-[120px] items-center relative z-1">
         <div className="flex gap-[12px] flex-col max-w-[320px]">
           <h2 className="h1-bold border-b w-fit mx-auto lg:mx-0">
             اتصل بـ لبيب
