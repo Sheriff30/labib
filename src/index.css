@@ -44,7 +44,7 @@
 }
 
 body {
-  font-family: "Labeeb-Arabic", sans-serif;
+  font-family: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
 }
 
 .body-medium {
@@ -75,7 +75,7 @@ body {
 
 .h3-bold-english {
   @apply text-[24px] leading-[29px] font-medium;
-  font-family: "Labeeb-English", sans-serif;
+  font-family: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
 }
 
 .titles-medium {
@@ -110,5 +110,5 @@ body {
 }
 .caption-medium-english {
   @apply text-[14px] leading-[22px] font-bold;
-  font-family: "Labeeb-English", sans-serif;
+  font-family: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
 }
