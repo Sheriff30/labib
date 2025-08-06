@@ -21,7 +21,7 @@ export default function About() {
       <div className="px-[20px] py-[64px]">
         <div className="max-w-[1440px] mx-auto">
           <h2 className="text-center mb-[24px] h2-bold">
-            أرقام تروي حكايتنا.. وتأثيرنا يكبر كل يوم
+            أرقام تروي حكايتنا.. وبتأثير يكبر كل يوم
           </h2>
           <div className="flex gap-[48px] justify-center flex-wrap">
             {numbers.map((i, index) => {
@@ -52,7 +52,7 @@ export default function About() {
               href="/"
               className="bg-[#0E2C43] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-white "
             >
-              <div>الحكاية كاملة</div>
+              <div>الحكاية الكاملة</div>
               <img src="/arrow.svg" alt="arrow" />
             </a>
           </div>
