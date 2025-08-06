@@ -145,36 +145,42 @@ export default function Header() {
       </div>
 
       {/* Menu list */}
-      {isMenuOpened && (
-        <div className="bg-[#00000080] fixed top-0 left-0 z-50 h-[100dvh] w-[100dvw] flex justify-end">
-          <div
-            ref={menuRef}
-            className="max-w-[300px] lg:max-w-[400px] bg-white w-full h-full py-[30px] lg:py-[64px] px-[20px] lg:px-[48px] flex flex-col gap-[48px]"
-          >
-            <div className="flex justify-between gap-1 items-center">
-              <div className="h2-light">القائمة</div>
-              <img
-                src="/close.svg"
-                alt="close button"
-                onClick={handleMenuOpen}
-                className="cursor-pointer"
-              />
-            </div>
-
-            <ul className="flex flex-col gap-[16px]">
-              {menuNavItems.map((link, index) => {
-                return (
-                  <li key={index}>
-                    <a href={link.href} className="h3-medium">
-                      {link.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+      <div
+        className={`bg-[#00000080]  ease-in-out fixed top-0 left-0 z-50 h-[100dvh] w-[100dvw] flex justify-end transition-opacity duration-300 ${
+          isMenuOpened
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div
+          ref={menuRef}
+          className={`max-w-[300px] lg:max-w-[400px] bg-white w-full h-full py-[30px] lg:py-[64px] px-[20px] lg:px-[48px] flex flex-col gap-[48px] transform transition-transform duration-300 ease-in-out ${
+            isMenuOpened ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="flex justify-between gap-1 items-center">
+            <div className="h2-light">القائمة</div>
+            <img
+              src="/close.svg"
+              alt="close button"
+              onClick={handleMenuOpen}
+              className="cursor-pointer"
+            />
           </div>
+
+          <ul className="flex flex-col gap-[16px]">
+            {menuNavItems.map((link, index) => {
+              return (
+                <li key={index}>
+                  <a href={link.href} className="h3-medium">
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-      )}
+      </div>
     </>
   );
 }
