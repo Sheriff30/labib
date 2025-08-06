@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Fields from "./components/Fields";
 import Initiatives from "./components/Initiatives";
 import Form from "./components/Form";
-import Register from "./components/register";
+import Register from "./components/Register";
 import Footer from "./components/Footer";
 
 export default function Page() {
