@@ -2,8 +2,8 @@
 
 /* Font Fallback Variables */
 :root {
-  --font-arabic: "Labeeb-Arabic", "Arial", sans-serif;
-  --font-english: "Labeeb-English", "Arial", sans-serif;
+  --font-arabic: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --font-english: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
 }
 /* Custom Fonts */
 @font-face {
@@ -11,6 +11,7 @@
   src: url("/fonts/Labeeb-Arabic-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +19,7 @@
   src: url("/fonts/Labeeb-Arabic-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +27,7 @@
   src: url("/fonts/Labeeb-Arabic-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,6 +35,7 @@
   src: url("/fonts/Labeeb-English-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -39,6 +43,7 @@
   src: url("/fonts/Labeeb-English-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -46,6 +51,7 @@
   src: url("/fonts/Labeeb-English-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
