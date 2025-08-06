@@ -2,8 +2,8 @@
 
 /* Font Fallback Variables */
 :root {
-  --font-arabic: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
-  --font-english: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --font-arabic: "Labeeb-Arabic", "Arial", sans-serif;
+  --font-english: "Labeeb-English", "Arial", sans-serif;
 }
 /* Custom Fonts */
 @font-face {
