@@ -100,3 +100,11 @@ body {
 .h4-link {
   @apply text-[24px] leading-[34px] font-[900] underline cursor-pointer;
 }
+
+.caption-medium {
+  @apply text-[14px] leading-[22px] font-bold;
+}
+.caption-medium-english {
+  @apply text-[14px] leading-[22px] font-bold;
+  font-family: "Labeeb-English", sans-serif;
+}

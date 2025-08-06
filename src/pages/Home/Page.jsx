@@ -8,6 +8,7 @@ import Fields from "./components/Fields";
 import Initiatives from "./components/Initiatives";
 import Form from "./components/Form";
 import Register from "./components/register";
+import Footer from "./components/Footer";
 
 export default function Page() {
   return (
@@ -30,6 +31,8 @@ export default function Page() {
       <Form />
       {/* Register */}
       <Register />
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
