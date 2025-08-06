@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const navItems = [
     {
       label: "حكاية لبيب",
@@ -29,11 +41,17 @@ export default function Header() {
   let style = "";
 
   if (location.pathname === "/") {
-    style = "bg-white fixed top-0 left-0 right-0 z-50";
+    style = isScrolled
+      ? "bg-white/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md"
+      : "bg-white fixed top-0 left-0 right-0 z-50";
   }
 
+  const paddingClass = isScrolled ? "py-[20px]" : "py-[20px] lg:py-[48px]";
+
   return (
-    <div className={`py-[20px] lg:py-[48px] px-[20px] ${style}`}>
+    <div
+      className={`${paddingClass} px-[20px] transition-all duration-300 ease-in-out ${style}`}
+    >
       <header className="max-w-[1440px] mx-auto flex justify-between items-center">
         <img
           src="/logo.svg"
