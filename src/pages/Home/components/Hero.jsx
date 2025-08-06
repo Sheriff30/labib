@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="bg-[#F06827] relative ">
+    <div className="bg-[#F06827] relative">
       <img
         src="/hero-shape1.svg"
         alt="hero shape"
@@ -14,7 +14,7 @@ export default function Hero() {
         alt="hero shape"
         className="absolute left-0 ltr:right-0"
       />
-      <div className=" max-w-[1440px] pb-[125px] pt-[125px] lg:pt-[210px] mx-auto flex flex-col justify-end items-center px-[20px] gap-[60px]">
+      <div className=" max-w-[1440px] pb-[125px]  mx-auto flex flex-col pt-[200px] lg:pt-[352px] px-[20px] gap-[60px]">
         <h1 className="display2-bold text-white text-center">
           لبيب .. رحلة من الإلهام إلى الحياة
         </h1>

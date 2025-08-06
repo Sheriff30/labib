@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const navItems = [
@@ -23,8 +24,16 @@ export default function Header() {
       href: "/terms",
     },
   ];
+
+  const location = useLocation();
+  let style = "";
+
+  if (location.pathname === "/") {
+    style = "bg-white fixed top-0 left-0 right-0 z-50";
+  }
+
   return (
-    <div className="py-[20px] lg:py-[48px] px-[20px]">
+    <div className={`py-[20px] lg:py-[48px] px-[20px] ${style}`}>
       <header className="max-w-[1440px] mx-auto flex justify-between items-center">
         <img
           src="/logo.svg"
