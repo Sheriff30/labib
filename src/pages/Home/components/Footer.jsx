@@ -84,8 +84,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className=" bg-[url('/footer.png')] bg-cover bg-center  px-[20px]">
-      <div className="pt-[56px] pb-[32px]">
+    <footer className=" bg-[url('/footer.png')] bg-cover bg-center  ">
+      <div className="pt-[56px] pb-[32px] px-[20px] border-b border-[#154665]">
         <div className="max-w-[1000px] mx-auto grid gap-[24px]">
           <div className="flex gap-[12px] justify-center">
             {socialMedia.map((i) => {
@@ -123,7 +123,28 @@ export default function Footer() {
               <a href="tel:+966550000000">+966550000000</a>
             </div>
           </div>
+          <div className="flex justify-center gap-[32px] flex-col lg:flex-row items-center">
+            <div className="text-center lg:text-start">
+              <div className="title-bold text-white">
+                تبي تحول فكرتك لمشروع مميز يخاطب الأطفال؟
+              </div>
+              <div className="caption-medium text-[#a5a7a8]">
+                كن جزءًا من رحلة الإلهام والتغيير، وقدم طلبك اليوم لنصمم معًا
+                تجربة تعليمية فريدة تترك أثرًا يدوم.
+              </div>
+            </div>
+            <a
+              href="/"
+              className="bg-[#DDE3E8] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-[#0F1113] "
+            >
+              <div>قدم طلبك</div>
+              <img src="/arrow-black.svg" alt="arrow" />
+            </a>{" "}
+          </div>
         </div>
+      </div>
+      <div className="py-[24px] px-[20px] caption-medium text-white text-center">
+        جميع الحقوق محفوظة © 2025 لبيب
       </div>
     </footer>
   );

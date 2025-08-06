@@ -48,10 +48,13 @@ export default function About() {
               المعرفة، المتعة، والواقع.نصمم عوالم ملهمة تُسهم في تنمية وعي
               الطفل، وتطوير مهاراته، وغرس حب الاستكشاف في نفسه منذ الصغر.
             </p>
-            <div className="bg-[#0E2C43] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-white ">
+            <a
+              href="/"
+              className="bg-[#0E2C43] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-white "
+            >
               <div>الحكاية كاملة</div>
               <img src="/arrow.svg" alt="arrow" />
-            </div>
+            </a>
           </div>
           <div className="max-w-[207px] w-full ">
             <img src="/logo.svg" alt="about labeeb image" className="w-full" />

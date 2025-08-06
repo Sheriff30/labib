@@ -97,6 +97,10 @@ body {
   @apply text-[16px] leading-[27px] font-[900];
 }
 
+.title-bold {
+  @apply text-[16px] leading-[29px] font-[900];
+}
+
 .h4-link {
   @apply text-[24px] leading-[34px] font-[900] underline cursor-pointer;
 }
