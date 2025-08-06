@@ -61,6 +61,9 @@ body {
 .body-medium {
   @apply leading-[27px] text-base;
 }
+.body-light {
+  @apply leading-[27px] text-base font-light;
+}
 
 .display2-bold {
   @apply text-[40px] lg:text-[55px] xl:text-[72px] leading-[48px] lg:leading-[83px] font-[900];

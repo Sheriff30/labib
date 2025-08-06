@@ -3,18 +3,16 @@ import About from "./components/About";
 import Partners from "./components/Partners";
 import Testimonials from "./components/Testimonials";
 import Hero from "./components/Hero";
-import Header from "./components/Header";
+import Header from "../../shared/Header";
 import Fields from "./components/Fields";
 import Initiatives from "./components/Initiatives";
 import Form from "./components/Form";
 import Register from "./components/Register";
-import Footer from "./components/Footer";
+import Footer from "../../shared/Footer";
 
 export default function Page() {
   return (
     <>
-      {/* Header */}
-      <Header />
       {/* Hero */}
       <Hero />
       {/* About */}
@@ -31,8 +29,6 @@ export default function Page() {
       <Form />
       {/* Register */}
       <Register />
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
