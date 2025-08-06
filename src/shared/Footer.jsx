@@ -121,7 +121,7 @@ export default function Footer() {
             <div className="caption-medium-english text-white flex items-center gap-[6.5px]">
               <img src="/phone.svg" alt="phone" />
               <a dir="ltr" href="tel:+966556633936">
-                +9665566633936
+                +966556633936
               </a>
             </div>
           </div>
