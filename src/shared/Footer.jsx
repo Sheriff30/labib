@@ -4,7 +4,7 @@ export default function Footer() {
   const socialMedia = [
     {
       icon: "/whatsapp.svg",
-      link: "https://wa.me/9665566633936",
+      link: "https://wa.me/966556633936",
     },
     {
       icon: "/twitter.svg",
@@ -120,7 +120,7 @@ export default function Footer() {
             </div>
             <div className="caption-medium-english text-white flex items-center gap-[6.5px]">
               <img src="/phone.svg" alt="phone" />
-              <a dir="ltr" href="tel:+9665566633936">
+              <a dir="ltr" href="tel:+966556633936">
                 +9665566633936
               </a>
             </div>
