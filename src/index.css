@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Font Fallback Variables */
+:root {
+  --font-arabic: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --font-english: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
 /* Custom Fonts */
 @font-face {
   font-family: "Labeeb-Arabic";
@@ -44,7 +49,7 @@
 }
 
 body {
-  font-family: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-family: var(--font-arabic);
 }
 
 .body-medium {
@@ -75,7 +80,7 @@ body {
 
 .h3-bold-english {
   @apply text-[24px] leading-[29px] font-medium;
-  font-family: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-family: var(--font-english);
 }
 
 .titles-medium {
@@ -110,5 +115,5 @@ body {
 }
 .caption-medium-english {
   @apply text-[14px] leading-[22px] font-bold;
-  font-family: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-family: var(--font-english);
 }
