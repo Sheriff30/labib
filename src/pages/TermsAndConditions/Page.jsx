@@ -1,4 +1,5 @@
 import React from "react";
+import { Breadcrumbs } from "@/shared";
 
 export default function Page() {
   const termsAndConditions = [
@@ -40,24 +41,27 @@ export default function Page() {
   ];
 
   return (
-    <div className="px-[20px] pb-[100px]">
-      <div className="max-w-[1440px] mx-auto">
-        <div className="flex flex-col gap-[24px]">
-          <h1 className="h1-bold">الشروط والأحكام</h1>
-
-          <div className="titles-medium">
-            تم آخر تحديث للشروط والأحكام بتاريخ 2023-07-24
-          </div>
+    <>
+      <Breadcrumbs />
+      <div className="px-[20px] pb-[100px]">
+        <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col gap-[24px]">
-            {termsAndConditions.map((item, index) => (
-              <div key={index}>
-                <h2 className="title-bold">{item.title}</h2>
-                <p className="body-light">{item.description}</p>
-              </div>
-            ))}
+            <h1 className="h1-bold">الشروط والأحكام</h1>
+
+            <div className="titles-medium">
+              تم آخر تحديث للشروط والأحكام بتاريخ 2023-07-24
+            </div>
+            <div className="flex flex-col gap-[24px]">
+              {termsAndConditions.map((item, index) => (
+                <div key={index}>
+                  <h2 className="title-bold">{item.title}</h2>
+                  <p className="body-light">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>{" "}
-    </div>
+        </div>{" "}
+      </div>
+    </>
   );
 }

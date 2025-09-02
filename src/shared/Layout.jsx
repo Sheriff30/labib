@@ -1,19 +1,15 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import Breadcrumbs from "./Breadcrumbs";
+import { Outlet } from "react-router-dom";
+import { Header, Footer, Register } from "./";
 
 export default function Layout() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
   return (
     <>
       {/* Header */}
       <Header />
-      {!isHome && <Breadcrumbs />}
       <Outlet />
       {/* Footer */}
+      <Register />
       <Footer />
     </>
   );

@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
 /* Font Fallback Variables */
-:root {
+
+@theme inline {
   --font-arabic: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
   --font-english: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --color-yellow: #ffd127;
+  --color-blue: #1685c6;
+  --color-offwhite: #eef2f5;
+  --color-primary-default: #4a5057;
+  --color-secondary-default: #4a5057;
+  --color-bg-default: #f9fafb;
+  --color-bg-secondary: #dc222a;
 }
+
 /* Custom Fonts */
 @font-face {
   font-family: "Labeeb-Arabic";
@@ -74,6 +83,9 @@ body {
 }
 .h4-light {
   @apply text-[24px] leading-[34px] font-light;
+}
+.h4-bold {
+  @apply text-[24px] leading-[34px] font-medium;
 }
 .h4-image {
   @apply text-[13px] leading-[21px] font-light;

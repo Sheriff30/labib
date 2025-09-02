@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Page";
-import Layout from "./shared/Layout";
-import TermsAndConditions from "./pages/TermsAndConditions/Page";
+import { Home, TermsAndConditions, About } from "@/pages";
+import Layout from "@/shared/Layout";
 
 function App() {
   return (
@@ -10,6 +9,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

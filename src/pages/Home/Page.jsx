@@ -1,14 +1,14 @@
 import React from "react";
-import About from "./components/About";
-import Partners from "./components/Partners";
-import Testimonials from "./components/Testimonials";
-import Hero from "./components/Hero";
-import Header from "../../shared/Header";
-import Fields from "./components/Fields";
-import Initiatives from "./components/Initiatives";
-import Form from "./components/Form";
-import Register from "./components/Register";
-import Footer from "../../shared/Footer";
+
+import {
+  About,
+  Testimonials,
+  Hero,
+  Fields,
+  Initiatives,
+  Form,
+} from "@/pages/Home/components";
+import { Partners } from "@/shared";
 
 export default function Page() {
   return (
@@ -27,8 +27,6 @@ export default function Page() {
       <Initiatives />
       {/* Form */}
       <Form />
-      {/* Register */}
-      <Register />
     </>
   );
 }
