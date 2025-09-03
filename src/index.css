@@ -10,7 +10,7 @@
   --color-offwhite: #eef2f5;
   --color-primary-default: #4a5057;
   --color-secondary-default: #4a5057;
-  --color-bg-default: #f9fafb;
+  --color-default: #f9fafb;
   --color-secondary-default: #dc222a;
   --color-red: #f04349;
   --color-navy: #0f2837;
@@ -155,4 +155,13 @@ body {
 }
 .bg-gradient-red {
   background: linear-gradient(90deg, #f06827 0%, #f04349 100%);
+}
+
+.bg-gradient-navy {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 44, 67, 0) -25.92%,
+    #0e2c43 100%
+  );
+  background-blend-mode: multiply;
 }
