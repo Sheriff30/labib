@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/shared";
 export default function Page() {
   return (
     <div className="max-w-[1232px] mx-auto ">
-      <div className="py-4 px-5">
+      <div className="py-4 pb-15 px-5">
         <div className="mb-6">
           <Breadcrumbs
             link1="/library"
