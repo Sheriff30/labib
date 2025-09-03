@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, TermsAndConditions, About } from "@/pages";
+import { Home, TermsAndConditions, About, Library } from "@/pages";
 import Layout from "@/shared/Layout";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/about" element={<About />} />
+          <Route path="/library" element={<Library />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -11,7 +11,9 @@
   --color-primary-default: #4a5057;
   --color-secondary-default: #4a5057;
   --color-bg-default: #f9fafb;
-  --color-bg-secondary: #dc222a;
+  --color-secondary-default: #dc222a;
+  --color-red: #f04349;
+  --color-navy: #0f2837;
 }
 
 /* Custom Fonts */
@@ -140,7 +142,17 @@ body {
 .caption-medium {
   @apply text-[14px] leading-[22px] font-bold;
 }
+.caption-light {
+  @apply text-[14px] leading-[22px] font-light;
+}
 .caption-medium-english {
   @apply text-[14px] leading-[22px] font-bold;
   font-family: var(--font-english);
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+.bg-gradient-red {
+  background: linear-gradient(90deg, #f06827 0%, #f04349 100%);
 }

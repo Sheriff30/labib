@@ -97,7 +97,11 @@ export default function Header() {
   const location = useLocation();
   let style = "";
 
-  if (location.pathname === "/" || location.pathname === "/about") {
+  if (
+    location.pathname === "/" ||
+    location.pathname === "/about" ||
+    location.pathname === "/library"
+  ) {
     style = isScrolled
       ? "bg-white/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-30 shadow-md"
       : "bg-white fixed top-0 left-0 right-0 z-30";
