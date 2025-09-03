@@ -14,7 +14,7 @@ export default function Hero() {
         alt="hero shape"
         className="absolute left-0 ltr:right-0"
       />
-      <div className=" max-w-[1440px] pb-[125px]  mx-auto flex flex-col pt-[200px] lg:pt-[352px] px-[20px] gap-[60px] relative z-20 ">
+      <div className=" max-w-[1232px] pb-[125px]  mx-auto flex flex-col pt-[200px] lg:pt-[352px] px-[20px] gap-[60px] relative z-20 ">
         <h1 className="display2-bold text-white text-center">مكتبة لبيب </h1>
         <div className="flex items-center justify-center gap-[50px] flex-wrap ">
           {" "}

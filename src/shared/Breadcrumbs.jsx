@@ -34,7 +34,7 @@ export default function Breadcrumbs() {
 
   return (
     <div className="px-[20px] pt-[12px] pb-[40px]">
-      <div className="flex items-center  max-w-[1440px] mx-auto">
+      <div className="flex items-center  max-w-[1232px] mx-auto">
         {breadcrumbs}
       </div>
     </div>

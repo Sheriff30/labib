@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 export default function Partners() {
   return (
     <div className="py-[56px] px-[20px]">
-      <div className="max-w-[1440px] mx-auto f">
+      <div className="max-w-[1232px] mx-auto f">
         {/* Title */}
         <h2 className="h1-bold text-center mb-[32px]">شركاء لبيب</h2>
 

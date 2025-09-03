@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Hero />
       <div className="px-5 py-8">
-        <div className="max-w-[1440px] mx-auto">
+        <div className="max-w-[1232px] mx-auto">
           <h2 className="h1-bold mb-2">لبيب</h2>
           <p className="h3-light">
             شركة سعودية رائدة في ابتكار وتطوير تجارب تعليمية ترفيهية وتفاعلية
@@ -60,7 +60,7 @@ export default function Page() {
         </div>{" "}
       </div>
       <div className="px-5 py-8 lg:py-30">
-        <div className="max-w-[1440px] mx-auto flex flex-col gap-10 lg:gap-30 ">
+        <div className="max-w-[1232px] mx-auto flex flex-col gap-10 lg:gap-30 ">
           <div className="flex gap-12.5 items-center flex-col lg:flex-row">
             <img
               src="/vission.svg"

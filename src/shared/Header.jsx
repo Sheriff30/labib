@@ -118,7 +118,7 @@ export default function Header() {
       <div
         className={`${paddingClass} px-[20px] transition-all duration-300 ease-in-out ${style}`}
       >
-        <header className="max-w-[1440px] mx-auto flex justify-between items-center">
+        <header className="max-w-[1232px] mx-auto flex justify-between items-center">
           <img
             src="/logo.svg"
             alt="logo"

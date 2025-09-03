@@ -23,7 +23,7 @@ export default function Fields() {
   ];
   return (
     <div className="bg-[#F9FAFB] py-[100px] px-[20px]">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-[1232px] mx-auto">
         <div className="flex gap-[24px] items-center justify-center text-center flex-col lg:flex-row lg:justify-between mb-[56px]">
           <h1 className="h1-bold">رحلة تعليمية شاملة لأجيال المستقبل</h1>
           <a className="h4-link text-[#F06827]">عرض كل المجالات</a>

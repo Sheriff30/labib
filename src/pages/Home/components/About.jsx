@@ -19,7 +19,7 @@ export default function About() {
   return (
     <div className="bg-[#FEF6EE]">
       <div className="px-[20px] py-[64px]">
-        <div className="max-w-[1440px] mx-auto">
+        <div className="max-w-[1232px] mx-auto">
           <h2 className="text-center mb-[24px] h2-bold">
             أرقام تروي حكايتنا.. وبتأثير يكبر كل يوم
           </h2>
@@ -39,7 +39,7 @@ export default function About() {
         </div>
       </div>
       <div className="py-[32px] px-[20px]">
-        <div className="max-w-[1440px] mx-auto flex gap-[64px] items-center justify-between flex-col lg:flex-row">
+        <div className="max-w-[1232px] mx-auto flex gap-[64px] items-center justify-between flex-col lg:flex-row">
           <div className="flex flex-col">
             <div className="h1-bold mb-[8px]">لبيب</div>
             <p className="mb-[24px] h3-light">

@@ -44,7 +44,7 @@ export default function Page() {
     <>
       <Breadcrumbs />
       <div className="px-[20px] pb-[100px]">
-        <div className="max-w-[1440px] mx-auto">
+        <div className="max-w-[1232px] mx-auto">
           <div className="flex flex-col gap-[24px]">
             <h1 className="h1-bold">الشروط والأحكام</h1>
 
