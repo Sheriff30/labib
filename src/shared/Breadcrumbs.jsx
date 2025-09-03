@@ -9,7 +9,7 @@ export default function Breadcrumbs({ link1, title1, link2, title2 }) {
       </Link>
       {title1 && <div> &gt;</div>}
       {title1 && <Link to={link1}>{title1}</Link>}
-      {title1 && <div> &gt;</div>}
+      {title2 && <div> &gt;</div>}
       {title2 && <Link to={link2}>{title2}</Link>}
     </div>
   );
