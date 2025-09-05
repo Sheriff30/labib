@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Form() {
   return (
-    <div className="py-[69px] relative  bg-[#004D1E4A]">
+    <div className="py-[69px] relative  bg-[#004D1E4A]" id="contact">
       <img
         src="/form-shape1.svg"
         alt="form-shape1"

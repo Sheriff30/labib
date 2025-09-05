@@ -1,11 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../public/icons/logo";
 import Menu from "../../public/icons/Menu";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      // If already on home page, just scroll to contact
+      const contactElement = document.getElementById("contact");
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on another page, navigate to home with hash
+      navigate("/#contact");
+    }
+  };
+
+  const handleNavContactClick = (e) => {
+    e.preventDefault();
+    console.log("Nav contact clicked");
+    handleContactClick(e);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +38,32 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle hash navigation
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash === "#contact") {
+      // Add a delay to ensure the page is fully rendered
+      const scrollToContact = () => {
+        const contactElement = document.getElementById("contact");
+        if (contactElement) {
+          // Scroll to the element with some offset to ensure it's visible
+          const elementPosition = contactElement.offsetTop;
+          const offsetPosition = elementPosition - 100; // 100px offset from top
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        } else {
+          // If element not found, retry after a short delay
+          setTimeout(scrollToContact, 100);
+        }
+      };
+
+      // Wait for the page to be fully loaded
+      setTimeout(scrollToContact, 500);
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,19 +92,19 @@ export default function Header() {
   const navItems = [
     {
       label: "حكاية لبيب",
-      href: "/",
+      href: "/about",
     },
     {
       label: "مجالاتنا",
-      href: "/",
+      href: "/fields",
     },
     {
       label: "مبادراتنا",
-      href: "/",
+      href: "/inspiration",
     },
     {
       label: "مكتبة لبيب",
-      href: "/",
+      href: "/library",
     },
     {
       label: "الشروط والأحكام",
@@ -71,31 +119,30 @@ export default function Header() {
     },
     {
       label: "حكاية لبيب",
-      href: "/",
+      href: "/about",
     },
     {
       label: "مساحة الإلهام",
-      href: "/",
+      href: "/inspiration",
     },
     {
       label: "مكتبة لبيب",
-      href: "/",
+      href: "/library",
     },
     {
       label: "الخدمات",
-      href: "/",
+      href: "/fields",
     },
     {
       label: "الشروط والأحكام",
-      href: "/",
+      href: "/terms",
     },
     {
       label: "اتصل بنا",
-      href: "/",
+      href: "/#contact",
     },
   ];
 
-  const location = useLocation();
   let style = "";
 
   if (
@@ -121,20 +168,31 @@ export default function Header() {
       >
         <header className="max-w-[1232px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-[83px]">
-            <Logo className="w-[70px] h-[50px] lg:w-[103px] lg:h-[64px]" />
+            <Link to="/">
+              <Logo className="w-[70px] h-[50px] lg:w-[103px] lg:h-[64px]" />
+            </Link>
 
-            <Link
-              to="/"
+            <a
+              href="/#contact"
+              onClick={handleContactClick}
               className="cta-large bg-black text-white py-1 px-[46px] rounded-[16px] outline-none border-none hidden lg:block"
             >
               سجّل اهتمامك{" "}
-            </Link>
+            </a>
           </div>
           <ul className="flex gap-[40px] items-center">
             {navItems.map((link, index) => {
               return (
                 <li key={index} className="cursor-pointer hidden lg:block">
-                  <a href={link.href} className="body-medium">
+                  <a
+                    href={link.href}
+                    onClick={
+                      link.label === "اتصل بنا"
+                        ? handleNavContactClick
+                        : undefined
+                    }
+                    className="body-medium"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -184,12 +242,13 @@ export default function Header() {
             })}
           </ul>
 
-          <Link
-            to="/"
+          <a
+            href="/#contact"
+            onClick={handleContactClick}
             className="cta-large bg-black text-white text-center py-1 px-[46px] rounded-[16px] outline-none border-none block lg:hidden"
           >
             سجّل اهتمامك{" "}
-          </Link>
+          </a>
         </div>
       </div>
     </>

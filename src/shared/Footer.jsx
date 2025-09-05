@@ -39,47 +39,47 @@ export default function Footer() {
     },
     {
       label: "حكاية لبيب",
-      link: "/",
+      link: "/about",
     },
     {
       label: "الخدمات",
-      link: "/",
+      link: "/fields",
     },
     {
       label: "مساحة الإلهام",
-      link: "/",
+      link: "/inspiration",
     },
     {
       label: "مكتبة لبيب",
-      link: "/",
+      link: "/library",
     },
     {
       label: "اتصل بنا",
-      link: "/",
+      link: "/#contact",
     },
     {
       label: "الشروط والأحكام",
-      link: "/",
+      link: "/terms",
     },
     {
       label: "الرحلات المدرسية",
-      link: "/",
+      link: "/inspiration",
     },
     {
       label: " المعارض المدرسية",
-      link: "/",
+      link: "/inspiration",
     },
     {
       label: " الانشطة المدرسية",
-      link: "/",
+      link: "/inspiration",
     },
     {
       label: "معسكرات صيفية",
-      link: "/",
+      link: "/inspiration",
     },
     {
       label: "منتجات مرحلة الطفولة",
-      link: "/",
+      link: "/inspiration",
     },
   ];
 
