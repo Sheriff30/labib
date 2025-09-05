@@ -17,11 +17,15 @@ export default function Page() {
                   title="تنظيم ورش عمل وفعاليات للاطفال"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post3.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
                 <NewsCard
                   title="إقامة زيارات مدرسية توعوية تثقيفية"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post2.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
               </div>
               <div className="grid grid-cols-2 gap-5">
@@ -29,11 +33,15 @@ export default function Page() {
                   variant="compact"
                   title="التسويق لمهرجان ثقافة الطفل"
                   date="7 يوليو 2025"
+                  src="/post2.png"
+                  className="max-h-[200px] lg:max-h-[216px]"
                 />
                 <NewsCard
                   variant="compact"
                   title="إقامة زيارات مدرسية توعوية تثقيفية"
                   date="7 يوليو 2025"
+                  src="/post1.png"
+                  className="max-h-[200px] lg:max-h-[216px]"
                 />
               </div>
             </div>
@@ -73,18 +81,24 @@ export default function Page() {
                   title="التسويق لمهرجان ثقافة الطفل"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post1.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
                 <NewsCard
                   variant="detailed"
                   title="تنظيم ورش عمل وفعاليات للاطفال"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post3.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
                 <NewsCard
                   variant="detailed"
                   title="إقامة زيارات مدرسية توعوية تثقيفية"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post2.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
               </div>
             </div>
@@ -103,44 +117,48 @@ export default function Page() {
                   title="تنظيم ورش عمل وفعاليات للاطفال"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post3.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
                 <NewsCard
                   variant="detailed"
                   title="إقامة زيارات مدرسية توعوية تثقيفية"
                   description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                   date="7 يوليو 2025"
+                  src="/post2.png"
+                  className="max-h-[200px] lg:max-h-[140px]"
                 />
               </div>
-              <div className="grid grid-cols-3 gap-5 w-full">
+              <div className="grid grid-cols-3 gap-2.5 lg:gap-5 w-full">
                 <img
-                  src="/library.png"
+                  src="/post3.png"
                   alt="studies and research img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full max-h-[140px] object-cover rounded"
                 />
                 <img
-                  src="/library.png"
+                  src="/post3.png"
                   alt="studies and research img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full max-h-[140px] object-cover rounded"
                 />
                 <img
-                  src="/library.png"
+                  src="/post3.png"
                   alt="studies and research img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full max-h-[140px] object-cover rounded"
                 />
                 <img
-                  src="/library.png"
+                  src="/post3.png"
                   alt="studies and research img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full max-h-[140px] object-cover rounded"
                 />
                 <img
-                  src="/library.png"
+                  src="/post3.png"
                   alt="studies and research img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full max-h-[140px] object-cover rounded"
                 />
                 <img
-                  src="/library.png"
+                  src="/post3.png"
                   alt="studies and research img"
-                  className="w-full h-full object-cover rounded"
+                  className="w-full max-h-[140px] object-cover rounded"
                 />
               </div>
             </div>
@@ -153,21 +171,29 @@ export default function Page() {
                 variant="compact"
                 title="إقامة زيارات مدرسية توعوية تثقيفية"
                 date="7 يوليو 2025"
+                src="/post1.png"
+                className="max-h-[200px] lg:max-h-[290px]"
               />
               <NewsCard
                 variant="compact"
                 title="التسويق لمهرجان ثقافة الطفل"
                 date="7 يوليو 2025"
+                src="/post2.png"
+                className="max-h-[200px] lg:max-h-[290px]"
               />
               <NewsCard
                 variant="compact"
                 title="إقامة زيارات مدرسية توعوية تثقيفية"
                 date="7 يوليو 2025"
+                src="/post3.png"
+                className="max-h-[200px] lg:max-h-[290px]"
               />
               <NewsCard
                 variant="compact"
                 title="التسويق لمهرجان ثقافة الطفل"
                 date="7 يوليو 2025"
+                src="/post2.png"
+                className="max-h-[200px] lg:max-h-[290px]"
               />
             </div>
           </div>

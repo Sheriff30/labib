@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import Logo from "../../public/icons/logo";
+import Menu from "../../public/icons/Menu";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -104,7 +105,7 @@ export default function Header() {
   ) {
     style = isScrolled
       ? "bg-white/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-30 shadow-md"
-      : "bg-white fixed top-0 left-0 right-0 z-30";
+      : "text-white fixed top-0 left-0 right-0 z-30";
   } else {
     style = isScrolled
       ? "bg-white/70 backdrop-blur-lg sticky top-0 left-0 right-0 z-30 shadow-md"
@@ -119,12 +120,16 @@ export default function Header() {
         className={`${paddingClass} px-[20px] transition-all duration-300 ease-in-out ${style}`}
       >
         <header className="max-w-[1232px] mx-auto flex justify-between items-center">
-          <img
-            src="/logo.svg"
-            alt="logo"
-            className="w-[70px] h-[50px] lg:w-[103px] lg:h-[64px]"
-          />
+          <div className="flex items-center gap-[83px]">
+            <Logo className="w-[70px] h-[50px] lg:w-[103px] lg:h-[64px]" />
 
+            <Link
+              to="/"
+              className="cta-large bg-black text-white py-1 px-[46px] rounded-[16px] outline-none border-none hidden lg:block"
+            >
+              سجّل اهتمامك{" "}
+            </Link>
+          </div>
           <ul className="flex gap-[40px] items-center">
             {navItems.map((link, index) => {
               return (
@@ -136,13 +141,8 @@ export default function Header() {
               );
             })}
 
-            <li className="cursor-pointer">EN</li>
             <li className="cursor-pointer" onClick={handleMenuOpen}>
-              <img
-                src="/menu.svg"
-                alt="menu"
-                className="w-[20px] h-[20px] lg:w-[35px] lg:h-[33px]"
-              />
+              <Menu className="w-[20px] h-[20px] lg:w-[35px] lg:h-[33px]" />
             </li>
           </ul>
         </header>
@@ -183,6 +183,13 @@ export default function Header() {
               );
             })}
           </ul>
+
+          <Link
+            to="/"
+            className="cta-large bg-black text-white text-center py-1 px-[46px] rounded-[16px] outline-none border-none block lg:hidden"
+          >
+            سجّل اهتمامك{" "}
+          </Link>
         </div>
       </div>
     </>

@@ -20,6 +20,7 @@ export default function Page() {
             title="تنظيم ورش عمل وفعاليات للاطفال"
             variant="articles"
             date="7 يوليو 2025"
+            src="/post2.png"
           />
           <div className="flex flex-col gap-8 border-t border-grey py-2 border-b ">
             <p className="text-primary-default">
@@ -116,21 +117,29 @@ export default function Page() {
                 title="تنظيم ورش عمل وفعاليات للاطفال"
                 description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                 date="7 يوليو 2025"
+                src="/post3.png"
+                className="max-h-[200px] lg:max-h-[140px]"
               />
               <NewsCard
                 title="تنظيم ورش عمل وفعاليات للاطفال"
                 description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                 date="7 يوليو 2025"
+                src="/post3.png"
+                className="max-h-[200px] lg:max-h-[140px]"
               />
               <NewsCard
                 title="إقامة زيارات مدرسية توعوية تثقيفية"
                 description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                 date="7 يوليو 2025"
+                src="/post2.png"
+                className="max-h-[200px] lg:max-h-[140px]"
               />
               <NewsCard
                 title="إقامة زيارات مدرسية توعوية تثقيفية"
                 description="في مكتبة لبيب، تبدأ حكايات الطفل بالحب وتنمو مع المعرفة والإلهام. هنا، تُنسج النصائح والدراسات والمقالات في رحلة فريدة"
                 date="7 يوليو 2025"
+                className="max-h-[200px] lg:max-h-[140px]"
+                src="/post2.png"
               />
             </div>
           </div>

@@ -5,6 +5,8 @@ export default function NewsCard({
   title,
   description,
   date,
+  src,
+  className,
 }) {
   return (
     <div
@@ -13,11 +15,11 @@ export default function NewsCard({
       } gap-5  h-full`}
     >
       <img
-        src="/library.png"
+        src={src}
         alt="library img"
         className={`w-full rounded-lg h-full object-cover ${
           variant === "articles" ? "max-h-[438px]" : ""
-        }`}
+        } ${className}`}
       />
       <div className="flex flex-col gap-2">
         <p className="h4-bold line-clamp-1 max-w-[390px]">{title} </p>

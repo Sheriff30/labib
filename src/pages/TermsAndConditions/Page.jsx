@@ -42,9 +42,10 @@ export default function Page() {
 
   return (
     <>
-      <Breadcrumbs />
       <div className="px-[20px] pb-[100px]">
-        <div className="max-w-[1232px] mx-auto">
+        <div className="max-w-[1232px] mx-auto flex flex-col gap-10">
+          <Breadcrumbs link1="/" title1="الشروط والأحكام" />
+
           <div className="flex flex-col gap-[24px]">
             <h1 className="h1-bold">الشروط والأحكام</h1>
 
