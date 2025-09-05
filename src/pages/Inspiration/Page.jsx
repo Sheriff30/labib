@@ -168,7 +168,7 @@ export default function Page() {
                 alt="articles img"
                 className="h-full w-full object-cover "
               />
-              <div className="absolute top-0 left-0 w-full h-full xl:opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300  bg-gradient-navy px-8 py-2 py-15 flex flex-col gap-2 text-white justify-end items-center">
+              <div className="absolute top-0 left-0 w-full h-full xl:opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300  bg-gradient-navy px-8 py-15 flex flex-col gap-2 text-white justify-end items-center">
                 <div className="titles-bold px-[37px] py-[1.5px] bg-white/25 w-fit rounded-lg ">
                   {item.category}
                 </div>
