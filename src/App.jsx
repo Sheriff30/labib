@@ -6,6 +6,7 @@ import {
   Library,
   Articles,
   Services,
+  Inspiration,
 } from "@/pages";
 import Layout from "@/shared/Layout";
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/library" element={<Library />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/inspiration" element={<Inspiration />} />
         </Route>
       </Routes>
     </BrowserRouter>
