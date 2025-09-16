@@ -121,16 +121,16 @@ export default function Header() {
       href: "/about",
     },
     {
-      label: "مساحة الإلهام",
+      label: "مجالاتنا",
+      href: "/fields",
+    },
+    {
+      label: "مبادراتنا",
       href: "/inspiration",
     },
     {
       label: "مكتبة لبيب",
       href: "/library",
-    },
-    {
-      label: "الخدمات",
-      href: "/fields",
     },
     {
       label: "الشروط والأحكام",

@@ -21,7 +21,7 @@ export default function About() {
       <div className="px-[20px] py-[64px]">
         <div className="max-w-[1232px] mx-auto">
           <h2 className="text-center mb-[24px] h2-bold">
-            أرقام تروي حكايتنا.. وبتأثير يكبر كل يوم
+            أرقام تروي حكايتنا.. بتأثير يكبر كل يوم
           </h2>
           <div className="flex gap-[48px] justify-center flex-wrap">
             {numbers.map((i, index) => {

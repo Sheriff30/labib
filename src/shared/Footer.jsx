@@ -3,32 +3,32 @@ import React from "react";
 export default function Footer() {
   const socialMedia = [
     {
-      icon: "/whatsapp.svg",
-      link: "https://wa.me/966556633936",
-    },
-    {
-      icon: "/twitter.svg",
-      link: "https://x.com/labeeb",
-    },
-    {
-      icon: "/instagram.svg",
-      link: "https://www.instagram.com/labeeb",
-    },
-    {
-      icon: "/linkedin.svg",
-      link: "https://www.linkedin.com/company/labeeb",
-    },
-    {
-      icon: "/youtube.svg",
-      link: "https://www.youtube.com/labeeb",
+      icon: "/tiktok.svg",
+      link: "https://www.tiktok.com/labeeb",
     },
     {
       icon: "/snapchat.svg",
       link: "https://www.snapchat.com/labeeb",
     },
     {
-      icon: "/tiktok.svg",
-      link: "https://www.tiktok.com/labeeb",
+      icon: "/youtube.svg",
+      link: "https://www.youtube.com/labeeb",
+    },
+    {
+      icon: "/linkedin.svg",
+      link: "https://www.linkedin.com/company/labeeb",
+    },
+    {
+      icon: "/instagram.svg",
+      link: "https://www.instagram.com/labeeb",
+    },
+    {
+      icon: "/twitter.svg",
+      link: "https://x.com/labeeb",
+    },
+    {
+      icon: "/whatsapp.svg",
+      link: "https://wa.me/966556633936",
     },
   ];
 
