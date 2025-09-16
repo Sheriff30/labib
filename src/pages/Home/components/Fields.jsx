@@ -3,22 +3,28 @@ import React from "react";
 export default function Fields() {
   const fields = [
     {
-      title: "الرحلات المدرسية",
+      title: "الرحلات الرحلات المدرسية والتجارب التعليمية المبتكرة",
       description:
-        "رحلات مدرسية تعليمية وممتعة تُنمي الفضول، وتفتح أبواب الاكتشاف وسط أجواء مليئة بالحماس والتجارب الآمنة.",
-      image: "/fields1.svg",
+        "رحلات مصممة بعناية وبرامج تفاعلية إلى وجهات متنوعة، ثقافية، تعليمية، ترفيهية أو مهنية. تلهم الفضول وتنمّي المهارات، وتربط المعرفة بالواقع من خلال أنشطة عملية وملهمة.",
+      image: "/fields1.png",
     },
     {
-      title: "المعسكرات الصيفية",
+      title: "المعسكرات الصيفية والفعاليات لاصيفية",
       description:
-        "مخيمات تعليمية وترفيهية في أجواء آمنة تنمّي مهارات الطفل، وتُحفّز مواهبه وتدعمه ليعبّر عن نفسه بثقة.",
-      image: "/fields2.svg",
+        "معسكرات حضورية أو افتراضية، موسمية أو بعد ساعات العمل، تمزج بين المتعة والتعلم الهادف، وتقدم أنشطة تراعي الفئة العمرية وتثري التجربة التعليمية والاجتماعية للأطفال والشباب من الطلاب والطالبات.",
+      image: "/fields2.png",
     },
     {
-      title: "⁠منتجات لمرحلة الطفولة",
+      title: (
+        <>
+          المبادرات الثقافية
+          <br />
+          والمجتمعية
+        </>
+      ),
       description:
-        "نُصمم منتجات تفاعلية تُحرّك خيال الطفل، وتمزج بين التفاعل البصري والحركة والواقع الافتراضي بإبداع ذكي.",
-      image: "/fields3.svg",
+        "تنظيم وتنفيذ مبادرات وبرامج إبداعية تعزز الهوية والانتماء، وتربط الأطفال والشباب بثقافتهم ومجتمعهم، عبر أنشطة إثرائية وتجارب ملهمة تترك أثرًا طويل المدى.",
+      image: "/fields3.png",
     },
   ];
   return (
@@ -28,7 +34,7 @@ export default function Fields() {
           <h1 className="h1-bold">رحلة تعليمية شاملة لأجيال المستقبل</h1>
           <a className="h4-link text-[#F06827]">عرض كل المجالات</a>
         </div>
-        <div className="flex gap-[16px] flex-col xl:flex-row ">
+        <div className="grid grid-cols-3 gap-[16px] lg:grid-cols-3 ">
           {fields.map((field, index) => {
             return (
               <div
@@ -38,7 +44,7 @@ export default function Fields() {
                 <img
                   src={field.image}
                   alt={field.title}
-                  className="mb-[24px] w-[90px] h-[90px]"
+                  className="mb-[24px] max-w-[160px]  h-[100px]"
                 />
                 <h2 className="h3-bold mb-[13px]">{field.title}</h2>
                 <p className="h4-light">{field.description}</p>
