@@ -37,8 +37,9 @@ const VALUES = [
 export default function Page() {
   const [showMore, setShowMore] = useState(false);
 
-  const fullText = "كيف نصنع تجربة تجعل الطفل يُقبل على المعرفة كما يُقبل على اللعب؟ هذا السؤال قادنا إلى تصميم تجارب تعليمية تفاعلية تجمع بين المتعة والتعلّم، تجعل الطفل يستكشف ويتعلم ويكتشف قدراته في بيئة آمنة ومحفزة. نحن نؤمن أن التعليم الحقيقي يحدث عندما يشارك الطفل بفعالية في تجربة التعلّم، وليس مجرد متلقٍ سلبي للمعلومات.";
-  
+  const fullText =
+    "كيف نصنع تجربة تجعل الطفل يُقبل على المعرفة كما يُقبل على اللعب؟ هذا السؤال قادنا إلى تصميم تجارب تعليمية تفاعلية تجمع بين المتعة والتعلّم، تجعل الطفل يستكشف ويتعلم ويكتشف قدراته في بيئة آمنة ومحفزة. نحن نؤمن أن التعليم الحقيقي يحدث عندما يشارك الطفل بفعالية في تجربة التعلّم، وليس مجرد متلقٍ سلبي للمعلومات.";
+
   const shortText = "كيف نصنع تجربة تجعل الطفل يُقبل على المعرفة كما يُقبل على";
 
   return (
@@ -59,9 +60,8 @@ export default function Page() {
           <p className="h3-light">بدأت فكرة "لبيب" بسؤال جوهري:</p>
           <p className="h3-light">
             {showMore ? fullText : shortText}
-            {!showMore && "..."}
-            {" "}
-            <button 
+            {!showMore && "..."}{" "}
+            <button
               onClick={() => setShowMore(!showMore)}
               className="underline text-blue cursor-pointer bg-transparent border-none p-0 font-inherit"
             >
