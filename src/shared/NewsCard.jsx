@@ -7,6 +7,7 @@ export default function NewsCard({
   date,
   src,
   className,
+  type,
 }) {
   return (
     <div
@@ -22,14 +23,21 @@ export default function NewsCard({
         } ${className}`}
       />
       <div className="flex flex-col gap-2">
-        <p className="h4-bold line-clamp-1 max-w-[390px]">{title} </p>
+        {type === "article" ? (
+          <p className="caption-light">{date}</p>
+        ) : (
+          <p className=" text-[22px] bold  max-w-[390px]">{title} </p>
+        )}
         {variant === "detailed" && (
-          <p className=" body-light text-primary-default line-clamp-2  xl:max-w-[274px] ">
+          <p className=" body-light text-primary-default line-clamp-2  xl:max-w-[285px] ">
             {description}
           </p>
         )}
-
-        <p className="caption-light">{date}</p>
+        {type === "article" ? (
+          <p className="h4-bold line-clamp-1 max-w-[390px]">{title} </p>
+        ) : (
+          <p className="caption-light">{date}</p>
+        )}{" "}
       </div>
     </div>
   );

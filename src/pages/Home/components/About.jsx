@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   const numbers = [
     {
-      number: "+300,00K",
+      number: "+300K",
       detail: "طفل استفادوا من التجارب التعليمية التفاعلية",
     },
     {

@@ -20,7 +20,7 @@ export default function Page() {
       {/* Partners */}
       <Partners />
       {/* Testimonials */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* Fields */}
       <Fields />
       {/* Initiatives */}

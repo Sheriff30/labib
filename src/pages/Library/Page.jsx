@@ -107,7 +107,7 @@ export default function Page() {
           <div className="flex flex-col gap-8 ">
             <SectionHeader
               src="/studies.svg"
-              title="الدراسات"
+              title="الدراسات والأبحاث"
               link="/studies"
             />
             <div className="grid lg:grid-cols-2 gap-5 ">

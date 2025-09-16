@@ -21,6 +21,7 @@ export default function Page() {
             variant="articles"
             date="7 يوليو 2025"
             src="/post2.png"
+            type="article"
           />
           <div className="flex flex-col gap-8 border-t border-grey py-2 border-b ">
             <p className="text-primary-default">

@@ -50,22 +50,22 @@ export default function Partners() {
             }}
           >
             <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />
+              <img src="/partner1.png" alt="Partner" className="min-w-[65px]" />
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />
+              <img src="/partner2.png" alt="Partner" className="min-w-[65px]" />
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />
+              <img src="/partner3.png" alt="Partner" className="min-w-[65px]" />
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />
+              <img src="/partner4.png" alt="Partner" className="min-w-[65px]" />
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />
+              <img src="/partner5.png" alt="Partner" className="min-w-[65px]" />
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner.svg" alt="Partner" className="min-w-[65px]" />
+              <img src="/partner6.png" alt="Partner" className="min-w-[65px]" />
             </SwiperSlide>
           </Swiper>
           <div className="swiper-button-next-custom cursor-pointer  flex items-center justify-center">
