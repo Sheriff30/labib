@@ -92,7 +92,7 @@ export default function Page() {
           <div className="grid-masonry" dir="ltr">
             {filteredData.map((item, index) => (
               <Link
-                to={`/inspiration/${item.slug}`}
+                to={`/blog/${item.slug}`}
                 key={item.id}
                 className={`rounded-lg overflow-hidden w-full relative group cursor-pointer text-center gallery${
                   index + 1
