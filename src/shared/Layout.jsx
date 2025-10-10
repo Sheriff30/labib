@@ -4,10 +4,12 @@ import { Header, Footer, Register } from "./";
 
 export default function Layout() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto_auto] h-screen ">
+    <div className="flex flex-col min-h-screen">
       {/* Header */}
       <Header />
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
       {/* Footer */}
       <Register />
       <Footer />
