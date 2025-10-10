@@ -99,7 +99,7 @@ export default function Header() {
     },
     {
       label: "مبادراتنا",
-      href: "/inspiration",
+      href: "/initiatives",
     },
     {
       label: "مكتبة لبيب",
@@ -126,7 +126,7 @@ export default function Header() {
     },
     {
       label: "مبادراتنا",
-      href: "/inspiration",
+      href: "/initiatives",
     },
     {
       label: "مكتبة لبيب",

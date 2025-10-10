@@ -33,7 +33,7 @@ function App() {
             <Route path="/library" element={<Library />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/fields" element={<Fields />} />
-            <Route path="/inspiration" element={<Inspiration />} />
+            <Route path="/initiatives" element={<Inspiration />} />
           </Route>
         </Routes>
       </BrowserRouter>

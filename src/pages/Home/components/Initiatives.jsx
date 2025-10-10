@@ -1,63 +1,112 @@
 import React from "react";
+import { useArticles } from "../../../hooks/content";
+import { Link } from "react-router-dom";
 
 export default function Initiatives() {
+  const { data: inspiration } = useArticles("inspiration");
+  console.log(inspiration);
   return (
     <div className="pt-[23.5px] pb-[119.5px] px-[20px]">
       <div className="max-w-[1232px] mx-auto">
         <div className="flex gap-[24px] items-center justify-center text-center flex-col lg:flex-row lg:justify-between mb-[24px]">
           <h1 className="h1-bold">تتجسد في تجارب وشراكات مؤثرة</h1>
-          <a className="h4-link text-[#F06827]">عرض كل المبادرات</a>
+          <a href="/initiatives" className="h4-link text-[#F06827]">
+            عرض كل المبادرات
+          </a>
         </div>
-        <div className="grid  lg:grid-cols-[1fr_1fr] gap-[12px]">
-          <div className="grid grid-cols-2 gap-[12px]">
-            <div className=" relative rounded-[8px] overflow-hidden">
+        <div className="grid  lg:grid-cols-2 gap-[12px] h-auto lg:h-130">
+          <div className="grid lg:grid-cols-2 gap-[12px]">
+            <Link
+              to={`/blog/${inspiration?.data?.[0]?.slug}`}
+              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
+            >
               <img
-                src="/initiatives.svg"
+                src={inspiration?.data?.[0]?.image}
                 alt="initiatives image"
                 className="w-full h-full"
               />
-              <div className="absolute bottom-[10px] flex flex-col w-full justify-center items-center text-center gap-[4px] ">
-                <h4 className="h4-image-bold text-white">
-                  برامج تفاعلية وقصص مُلهمة
-                </h4>
+              <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
+                <h4
+                  className="h4-image-bold text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: inspiration?.data?.[0]?.title,
+                  }}
+                />
               </div>
-            </div>
-            <div className="relative rounded-[8px] overflow-hidden">
+            </Link>
+            <Link
+              to={`/blog/${inspiration?.data?.[1]?.slug}`}
+              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
+            >
               <img
-                src="/initiatives.svg"
+                src={inspiration?.data?.[1]?.image}
                 alt="initiatives image"
                 className="w-full h-full"
-              />{" "}
-              <div className="absolute bottom-[10px] flex flex-col w-full justify-center items-center text-center gap-[4px] ">
-                <h4 className="h4-image-bold text-white">
-                  برامج تفاعلية وقصص مُلهمة
-                </h4>
-              </div>
-            </div>
-            <div className="col-span-full rounded-[8px] overflow-hidden">
-              <img
-                src="/initiatives2.svg"
-                alt="initiatives image"
-                className="w-full object-cover h-full"
               />
-            </div>
+              <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
+                <h4
+                  className="h4-image-bold text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: inspiration?.data?.[1]?.title,
+                  }}
+                />
+              </div>
+            </Link>
+            <Link
+              to={`/blog/${inspiration?.data?.[2]?.slug}`}
+              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
+            >
+              <img
+                src={inspiration?.data?.[2]?.image}
+                alt="initiatives image"
+                className="w-full h-full"
+              />
+              <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
+                <h4
+                  className="h4-image-bold text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: inspiration?.data?.[2]?.title,
+                  }}
+                />
+              </div>
+            </Link>
+            <Link
+              to={`/blog/${inspiration?.data?.[3]?.slug}`}
+              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
+            >
+              <img
+                src={inspiration?.data?.[3]?.image}
+                alt="initiatives image"
+                className="w-full h-full"
+              />
+              <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
+                <h4
+                  className="h4-image-bold text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: inspiration?.data?.[3]?.title,
+                  }}
+                />
+              </div>
+            </Link>
           </div>
-          <div className="relative rounded-[8px] overflow-hidden ">
+          <Link
+            to={`/blog/${inspiration?.data?.[4]?.slug}`}
+            className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto "
+          >
             <img
-              src="/initiatives.svg"
+              src={inspiration?.data?.[4]?.image}
               alt="initiatives image"
               className="w-full"
             />
-            <div className="absolute bottom-[60px] flex flex-col w-full justify-center items-center text-center gap-[4px] ">
-              <h4 className="h4-image-bold text-white">
-                برامج تفاعلية وقصص مُلهمة
-              </h4>
-              <p className="max-w-[260px] h4-image text-white">
-                داخل متجر نوق، أطلق الأطفال العنان لإبداعاتهم عبر فعاليات الرسم
-                التفاعلية.
-              </p>
+            <div className="absolute pb-2 h-full top-0 bg-black/20  flex flex-col w-full justify-end items-center text-center gap-[4px] ">
+              <h4
+                className="h4-image-bold text-white"
+                dangerouslySetInnerHTML={{
+                  __html: inspiration?.data?.[4]?.title,
+                }}
+              />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
