@@ -8,7 +8,7 @@ export default function Page() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { data: inspiration, isLoading } = useArticles(
-    "inspiration",
+    "initiatives",
     currentPage
   );
 

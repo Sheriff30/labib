@@ -3,7 +3,7 @@ import { useArticles } from "../../../hooks/content";
 import { Link } from "react-router-dom";
 
 export default function Initiatives() {
-  const { data: inspiration } = useArticles("inspiration");
+  const { data: inspiration } = useArticles("initiatives");
   console.log(inspiration);
   return (
     <div className="pt-[23.5px] pb-[119.5px] px-[20px]">
