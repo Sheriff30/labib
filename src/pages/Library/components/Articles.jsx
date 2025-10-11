@@ -3,6 +3,7 @@ import { SectionHeader } from "@/pages/Library/components";
 import { NewsCard } from "@/shared";
 import { useArticles } from "../../../hooks/content";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { Link } from "react-router-dom";
 
 const arabicMonths = {
   0: "يناير",
@@ -37,7 +38,10 @@ function Articles() {
     <div className="flex flex-col gap-8 ">
       <SectionHeader src="/articles.svg" title="المقالات" link="/articles" />
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-lg overflow-hidden w-full  relative">
+        <Link
+          to={`/blog/${articles?.[0]?.slug}`}
+          className="rounded-lg overflow-hidden w-full  relative"
+        >
           <img
             src={`${IMAGE_BASE_URL}${articles?.[0]?.image}`}
             alt="articles img"
@@ -54,7 +58,7 @@ function Articles() {
               {formatDateToArabic(articles?.[0]?.created_at)}{" "}
             </p>
           </div>
-        </div>
+        </Link>
         <div className="flex flex-col gap-5">
           <NewsCard
             variant="detailed"
