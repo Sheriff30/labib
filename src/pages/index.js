@@ -6,3 +6,7 @@ export * from "./Blog";
 export * from "./Fields";
 export * from "./Inspiration";
 export * from "./News";
+export * from "./Latest";
+export * from "./Articles";
+export * from "./Studies";
+export * from "./NewsArticles";

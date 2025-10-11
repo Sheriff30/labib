@@ -18,9 +18,25 @@ export const getArticle = async (slug: string) => {
     console.log(err);
   }
 };
+export const getAllArticles = async (page: number = 1) => {
+  try {
+    const res = await axiosInstance.get(`/articles?page=${page}`);
+    return res.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
 export const getNews = async (slug: string) => {
   try {
     const res = await axiosInstance.get(`/news/${slug}`);
+    return res.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const getAllNews = async () => {
+  try {
+    const res = await axiosInstance.get(`/news`);
     return res.data.data;
   } catch (err) {
     console.log(err);

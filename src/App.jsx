@@ -9,9 +9,13 @@ import {
   Inspiration,
   Fields,
   News,
+  Articles,
+  Studies,
+  NewsArticles,
 } from "@/pages";
 import Layout from "@/shared/Layout";
 import ScrollToTop from "./shared/ScrollToTop";
+import { Latest } from "./pages";
 
 // Create a query client
 const queryClient = new QueryClient({
@@ -37,8 +41,12 @@ function App() {
             <Route path="/library" element={<Library />} />
             <Route path="/blog/:slug" element={<Blog />} />
             <Route path="/news/:slug" element={<News />} />
+            <Route path="/news" element={<NewsArticles />} />
             <Route path="/fields" element={<Fields />} />
             <Route path="/initiatives" element={<Inspiration />} />
+            <Route path="/latest" element={<Latest />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/studies" element={<Studies />} />
           </Route>
         </Routes>
       </BrowserRouter>
