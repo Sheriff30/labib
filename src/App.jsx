@@ -5,11 +5,13 @@ import {
   TermsAndConditions,
   About,
   Library,
-  Articles,
+  Blog,
   Inspiration,
   Fields,
+  News,
 } from "@/pages";
 import Layout from "@/shared/Layout";
+import ScrollToTop from "./shared/ScrollToTop";
 
 // Create a query client
 const queryClient = new QueryClient({
@@ -25,13 +27,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <ScrollToTop />
+
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="/about" element={<About />} />
             <Route path="/library" element={<Library />} />
-            <Route path="/articles" element={<Articles />} />
+            <Route path="/blog/:slug" element={<Blog />} />
+            <Route path="/news/:slug" element={<News />} />
             <Route path="/fields" element={<Fields />} />
             <Route path="/initiatives" element={<Inspiration />} />
           </Route>

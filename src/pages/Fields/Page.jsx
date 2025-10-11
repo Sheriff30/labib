@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/shared";
 import { Link } from "react-router-dom";
 import { usePage } from "../../hooks/content";
 import { cn } from "../../lib/utils";
+import { IMAGE_BASE_URL } from "../../lib/constants";
 
 export default function Page() {
   const { data, isLoading } = usePage("fields");
@@ -47,18 +48,17 @@ export default function Page() {
           })}
 
           <div className="flex flex-col gap-6 lg:gap-30">
-            {/* service 1 */}
             {text_with_image?.map((item) => {
               const { title, text, image, image_position } = item?.data || {};
               return (
                 <div
                   className={cn("flex gap-15 flex-col items-center  ", {
-                    "lg:flex-row": image_position === "left",
-                    "lg:flex-row-reverse": image_position === "right",
+                    "lg:flex-row": image_position === "right",
+                    "lg:flex-row-reverse": image_position === "left",
                   })}
                 >
                   <img
-                    src={image}
+                    src={`${IMAGE_BASE_URL}${image}`}
                     alt="fields"
                     className="max-w-[245px] w-full"
                   />

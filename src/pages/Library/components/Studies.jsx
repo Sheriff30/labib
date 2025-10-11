@@ -22,6 +22,7 @@ function Studies() {
               title={item.title}
               description={item.content}
               date={item.created_at}
+              link={`/blog/${item?.slug}`}
               src={`${IMAGE_BASE_URL}${item.image}`}
               className="max-h-[200px] lg:max-h-[140px]"
             />

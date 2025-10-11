@@ -1,6 +1,7 @@
 import React from "react";
 import { useArticles } from "../../../hooks/content";
 import { Link } from "react-router-dom";
+import { IMAGE_BASE_URL } from "../../../lib/constants";
 
 export default function Initiatives() {
   const { data: inspiration } = useArticles("initiatives");
@@ -21,9 +22,9 @@ export default function Initiatives() {
               className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
             >
               <img
-                src={inspiration?.data?.[0]?.image}
+                src={`${IMAGE_BASE_URL}${inspiration?.data?.[0]?.image}`}
                 alt="initiatives image"
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
               <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
@@ -39,9 +40,9 @@ export default function Initiatives() {
               className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
             >
               <img
-                src={inspiration?.data?.[1]?.image}
+                src={`${IMAGE_BASE_URL}${inspiration?.data?.[1]?.image}`}
                 alt="initiatives image"
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
               <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
@@ -57,9 +58,9 @@ export default function Initiatives() {
               className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
             >
               <img
-                src={inspiration?.data?.[2]?.image}
+                src={`${IMAGE_BASE_URL}${inspiration?.data?.[2]?.image}`}
                 alt="initiatives image"
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
               <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
@@ -75,9 +76,9 @@ export default function Initiatives() {
               className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto"
             >
               <img
-                src={inspiration?.data?.[3]?.image}
+                src={`${IMAGE_BASE_URL}${inspiration?.data?.[3]?.image}`}
                 alt="initiatives image"
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
               <div className="pb-2 absolute top-0 bg-black/20  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
@@ -94,9 +95,10 @@ export default function Initiatives() {
             className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto "
           >
             <img
-              src={inspiration?.data?.[4]?.image}
+              src={`${IMAGE_BASE_URL}${inspiration?.data?.[4]?.image}`}
               alt="initiatives image"
-              className="w-full"
+              className="w-full h-full object-cover"
+              object-cover
             />
             <div className="absolute pb-2 h-full top-0 bg-black/20  flex flex-col w-full justify-end items-center text-center gap-[4px] ">
               <h4

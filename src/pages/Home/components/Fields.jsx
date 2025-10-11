@@ -1,5 +1,6 @@
 import React from "react";
 import { usePage } from "../../../hooks/content";
+import { IMAGE_BASE_URL } from "../../../lib/constants";
 
 export default function Fields() {
   const { data } = usePage("fields");
@@ -26,7 +27,7 @@ export default function Fields() {
                 className="flex flex-col bg-white px-[16px] py-[70px] items-center text-center xl:items-start xl:text-start shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px]"
               >
                 <img
-                  src={image}
+                  src={`${IMAGE_BASE_URL}${image}`}
                   alt={title}
                   className="mb-[24px] max-w-[160px]  h-[100px]"
                 />

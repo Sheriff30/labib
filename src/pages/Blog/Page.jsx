@@ -1,4 +1,3 @@
-import React from "react";
 import { NewsCard } from "@/shared";
 import { Breadcrumbs } from "@/shared";
 

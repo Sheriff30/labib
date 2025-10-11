@@ -1,4 +1,5 @@
 import React from "react";
+import { IMAGE_BASE_URL } from "../../../lib/constants";
 
 export default function About({ data }) {
   const text_section = data?.content?.filter(
@@ -48,7 +49,7 @@ export default function About({ data }) {
           </div>
           <div className="max-w-[207px] w-full ">
             <img
-              src={text_with_image?.data?.image}
+              src={`${IMAGE_BASE_URL}${text_with_image?.data?.image}`}
               alt="about labeeb image"
               className="w-full"
             />

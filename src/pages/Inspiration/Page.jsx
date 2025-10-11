@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Breadcrumbs } from "@/shared";
 import { useArticles } from "../../hooks/content";
 import { Link } from "react-router-dom";
+import { IMAGE_BASE_URL } from "../../lib/constants";
 
 export default function Page() {
   const [selectedCategory, setSelectedCategory] = useState("الكل");
@@ -99,11 +100,11 @@ export default function Page() {
                 }`}
               >
                 <img
-                  src={item.image}
+                  src={`${IMAGE_BASE_URL}${item.image}`}
                   alt={item.title}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute top-0 left-0 w-full h-full xl:opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-navy px-8 py-15 flex flex-col gap-2 text-white justify-end items-center">
+                <div className="absolute top-0 left-0 w-full h-full xl:opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-navy px-4 py-15 flex flex-col gap-2 text-white justify-end items-center">
                   <div className="titles-bold px-[37px] py-[1.5px] bg-white/25 w-fit rounded-lg">
                     {item.tags}
                   </div>

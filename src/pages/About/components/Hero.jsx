@@ -1,5 +1,6 @@
 import React from "react";
 import { Breadcrumbs } from "@/shared";
+import { IMAGE_BASE_URL } from "../../../lib/constants";
 
 export default function Hero({ data }) {
   const { image, text, title } = data?.data || {};
@@ -30,7 +31,11 @@ export default function Hero({ data }) {
               dangerouslySetInnerHTML={{ __html: text }}
             />
             <div className="max-w-[568px] w-full ">
-              <img src={image} alt="hero image" className="w-full" />
+              <img
+                src={`${IMAGE_BASE_URL}${image}`}
+                alt="hero image"
+                className="w-full"
+              />
             </div>
           </div>{" "}
         </div>

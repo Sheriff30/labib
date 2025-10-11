@@ -3,6 +3,7 @@ import { Hero } from "@/pages/About/components";
 import { Partners } from "@/shared";
 import { usePage } from "../../hooks/content";
 import { cn } from "../../lib/utils";
+import { IMAGE_BASE_URL } from "../../lib/constants";
 
 export default function Page() {
   const { data: about, isLoading } = usePage("about");
@@ -52,7 +53,7 @@ export default function Page() {
                   })}
                 >
                   <img
-                    src={image}
+                    src={`${IMAGE_BASE_URL}${image}`}
                     alt="about shape"
                     className="w-full max-w-[408px]"
                   />
