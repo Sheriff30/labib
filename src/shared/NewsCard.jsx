@@ -37,13 +37,12 @@ export default function NewsCard({
 }) {
   const formattedDate = date ? formatDateToArabic(date) : "";
 
-  return (
-    <Link
-      to={link}
-      className={`grid ${
-        variant === "detailed" ? "md:grid-cols-[0.5fr_1fr]" : "!flex flex-col  "
-      } gap-5  h-full`}
-    >
+  const cardClassName = `grid ${
+    variant === "detailed" ? "md:grid-cols-[0.5fr_1fr]" : "!flex flex-col"
+  } gap-5 h-full`;
+
+  const content = (
+    <>
       <img
         src={src}
         alt="library img"
@@ -55,20 +54,31 @@ export default function NewsCard({
         {type === "article" ? (
           <p className="caption-light">{formattedDate}</p>
         ) : (
-          <p className=" text-[22px] bold  max-w-[390px]">{title} </p>
+          <p className="text-[22px] bold line-clamp-1 max-w-[390px]">{title}</p>
         )}
         {variant === "detailed" && (
           <p
-            className=" body-light text-primary-default line-clamp-2  xl:max-w-[285px]"
+            className="body-light text-primary-default line-clamp-2 xl:max-w-[285px]"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
         {type === "article" ? (
-          <p className="h4-bold line-clamp-1 max-w-[390px]">{title} </p>
+          <p className="h4-bold">{title}</p>
         ) : (
           <p className="caption-light">{formattedDate}</p>
-        )}{" "}
+        )}
       </div>
+    </>
+  );
+
+  // If type is "article", render a div; otherwise, render a Link
+  if (type === "article") {
+    return <div className={cardClassName}>{content}</div>;
+  }
+
+  return (
+    <Link to={link} className={cardClassName}>
+      {content}
     </Link>
   );
 }

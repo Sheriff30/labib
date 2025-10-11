@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getArticles } from "../api/articles";
+import { getArticle, getArticles, getNews } from "../api/articles";
 import { getPage } from "../api/page";
 
 export const useArticles = (type: string, page: number = 1) => {
@@ -13,5 +13,17 @@ export const usePage = (type: string) => {
   return useQuery({
     queryKey: ["pages", type],
     queryFn: () => getPage(type),
+  });
+};
+export const useArticle = (slug: string) => {
+  return useQuery({
+    queryKey: ["pages", slug],
+    queryFn: () => getArticle(slug),
+  });
+};
+export const useNews = (slug: string) => {
+  return useQuery({
+    queryKey: ["pages", slug],
+    queryFn: () => getNews(slug),
   });
 };
