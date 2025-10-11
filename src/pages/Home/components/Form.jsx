@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useContactForm } from "../../../hooks/contact";
 
 export default function Form() {
+  const { form, onSubmit, isSubmitting } = useContactForm();
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const handleSubmit = async (data) => {
+    const result = await onSubmit(data);
+    setSubmitMessage(result.message);
+
+    setTimeout(() => setSubmitMessage(""), 3000);
+  };
   return (
     <div className="py-[69px] relative  bg-[#004D1E4A]" id="contact">
       <img
@@ -25,7 +35,7 @@ export default function Form() {
           </p>
         </div>
         <form
-          action=""
+          onSubmit={form.handleSubmit(handleSubmit)}
           className="grid lg:grid-cols-2 gap-x-[16px] gap-y-[32px]  w-full"
         >
           <label
@@ -34,21 +44,33 @@ export default function Form() {
           >
             الإسم
             <input
+              {...form.register("name")}
               type="text"
               id="name"
-              className="border-b border-white outline-none"
+              className="border-b border-white outline-none bg-transparent text-white placeholder-white/70"
             />
+            {form.formState.errors.name && (
+              <span className="text-red-500 text-sm mt-1">
+                {form.formState.errors.name.message}
+              </span>
+            )}
           </label>
           <label
-            htmlFor="phonenumber"
+            htmlFor="phone"
             className="flex flex-col gap-[4px] body-medium"
           >
             رقم الجوال
             <input
-              type="text"
-              id="phonenumber"
-              className="border-b border-white"
+              {...form.register("phone")}
+              type="tel"
+              id="phone"
+              className="border-b border-white outline-none bg-transparent text-white placeholder-white/70"
             />
+            {form.formState.errors.phone && (
+              <span className="text-red-500 text-sm mt-1">
+                {form.formState.errors.phone.message}
+              </span>
+            )}
           </label>
           <label
             htmlFor="email"
@@ -56,27 +78,56 @@ export default function Form() {
           >
             البريد الالكتروني
             <input
-              type="text"
+              {...form.register("email")}
+              type="email"
               id="email"
-              className="border-b border-white outline-none"
+              className="border-b border-white outline-none bg-transparent text-white placeholder-white/70"
             />
+            {form.formState.errors.email && (
+              <span className="text-red-500 text-sm mt-1">
+                {form.formState.errors.email.message}
+              </span>
+            )}
           </label>
           <label
-            htmlFor="details"
+            htmlFor="message"
             className="col-span-full flex flex-col gap-[4px] body-medium"
           >
             التفاصيل
             <textarea
-              type="text"
-              id="details"
-              className="border-b border-white outline-none"
+              {...form.register("message")}
+              id="message"
+              className="border-b border-white outline-none bg-transparent text-white placeholder-white/70 resize-none"
+              rows={3}
             />
+            {form.formState.errors.message && (
+              <span className="text-red-500 text-sm mt-1">
+                {form.formState.errors.message.message}
+              </span>
+            )}
           </label>
 
-          <button className="col-span-full p-[10px] border rounded-[16px] cursor-pointer cta-large flex items-center gap-[8px] justify-center">
-            إرسال
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="col-span-full p-[10px] border rounded-[16px] cursor-pointer cta-large flex items-center gap-[8px] justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
+          >
+            {isSubmitting ? "جاري الإرسال..." : "إرسال"}
             <img src="/submit.svg" alt="submit" className="w-[25px] h-[24px]" />
           </button>
+
+          {/* Success/Error Message */}
+          {submitMessage && (
+            <div
+              className={`col-span-full p-3 rounded-lg text-center ${
+                submitMessage.includes("بنجاح")
+                  ? "bg-green-500/20 text-green-200 border border-green-500/30"
+                  : "bg-red-500/20 text-red-200 border border-red-500/30"
+              }`}
+            >
+              {submitMessage}
+            </div>
+          )}
         </form>
       </div>
     </div>

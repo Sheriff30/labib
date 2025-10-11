@@ -6,6 +6,7 @@ import Articles from "./components/Articles";
 import Studies from "./components/Studies";
 import News from "./components/News";
 import { usePage } from "../../hooks/content";
+import EmailForm from "./components/EmailForm";
 
 export default function Page() {
   const { data, isLoading } = usePage("library");
@@ -47,28 +48,7 @@ export default function Page() {
           <News data={news} />
         </div>
       </div>
-      <div className="px-5 py-8 bg-default">
-        <div className="max-w-[1100px] mx-auto flex flex-col gap-3">
-          <p className="text-xl">
-            لأنك تهتم برفاه ونمو الطفل،انضم الآن إلى نشرتنا واحصل على أحدث
-            المقالات والدراسات والتجارب التي تُلهمك وتمكنك من تحقيق تأثير حقيقي
-            ومستدام.
-          </p>
-          <form action="" className="grid grid-cols-[1fr_75px] gap-1.5">
-            <input
-              type="text"
-              placeholder="ادخل بريدك الالكتروني"
-              className="bg-white py-[10px] px-[12.5px] rounded-md border border-offwhite"
-            />
-            <button
-              type="submit"
-              className="bg-black text-white  font-bold rounded-3xl"
-            >
-              اشترك
-            </button>
-          </form>
-        </div>
-      </div>
+      <EmailForm />
     </>
   );
 }
