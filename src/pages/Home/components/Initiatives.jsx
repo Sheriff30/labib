@@ -5,7 +5,6 @@ import { IMAGE_BASE_URL } from "../../../lib/constants";
 
 export default function Initiatives() {
   const { data: inspiration } = useArticles("initiatives");
-  console.log(inspiration);
   return (
     <div className="pt-[23.5px] pb-[119.5px] px-[20px]">
       <div className="max-w-[1232px] mx-auto">

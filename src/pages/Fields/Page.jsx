@@ -16,8 +16,6 @@ export default function Page() {
     (section) => section.type === "text_with_image"
   );
 
-  console.log(text_with_image);
-
   if (isLoading) {
     return (
       <div className="py-4 pb-15 px-5">

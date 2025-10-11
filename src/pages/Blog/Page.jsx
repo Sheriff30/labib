@@ -11,8 +11,6 @@ export default function Page() {
   const { data: blog, isLoading: isLoadingArticles } = usePage("blog");
   const articles = blog?.content[0]?.data?.items;
 
-  console.log(articles);
-
   if (isLoading) {
     return (
       <div className="py-4 px-5">

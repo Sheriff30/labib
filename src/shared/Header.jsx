@@ -24,7 +24,6 @@ export default function Header() {
 
   const handleNavContactClick = (e) => {
     e.preventDefault();
-    console.log("Nav contact clicked");
     handleContactClick(e);
   };
 
