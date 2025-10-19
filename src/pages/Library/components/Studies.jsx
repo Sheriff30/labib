@@ -8,11 +8,7 @@ function Studies() {
   const studies = data?.data.slice(0, 2) || [];
   return (
     <div className="flex flex-col gap-8 ">
-      <div
-        data-aos="fade-right"
-        data-aos-duration="600"
-        data-aos-delay="100"
-      >
+      <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
         <SectionHeader
           src="/studies.svg"
           title="الدراسات والأبحاث"
@@ -20,7 +16,7 @@ function Studies() {
         />
       </div>
       <div className="grid lg:grid-cols-2 gap-5 ">
-        <div 
+        <div
           className="flex flex-col gap-5"
           data-aos="fade-right"
           data-aos-duration="700"
@@ -39,7 +35,7 @@ function Studies() {
             />
           ))}
         </div>
-        <div 
+        <div
           className="grid grid-cols-3 gap-2.5 lg:gap-5 w-full"
           data-aos="fade-left"
           data-aos-duration="700"

@@ -36,11 +36,7 @@ function Articles() {
 
   return (
     <div className="flex flex-col gap-8 ">
-      <div
-        data-aos="fade-right"
-        data-aos-duration="600"
-        data-aos-delay="100"
-      >
+      <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
         <SectionHeader src="/articles.svg" title="المقالات" link="/articles" />
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
@@ -68,7 +64,7 @@ function Articles() {
             </p>
           </div>
         </Link>
-        <div 
+        <div
           className="flex flex-col gap-5"
           data-aos="fade-left"
           data-aos-duration="700"

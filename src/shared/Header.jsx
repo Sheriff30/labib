@@ -104,10 +104,6 @@ export default function Header() {
       label: "مكتبة لبيب",
       href: "/library",
     },
-    {
-      label: "الشروط والأحكام",
-      href: "/terms",
-    },
   ];
 
   const menuNavItems = [

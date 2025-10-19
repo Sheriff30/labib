@@ -31,14 +31,14 @@ export default function Page() {
   return (
     <>
       <Hero data={hero} />
-      <div 
+      <div
         className="px-5 py-8"
         data-aos="fade-up"
         data-aos-duration="800"
         data-aos-delay="100"
       >
         <div className="max-w-[1232px] mx-auto">
-          <h2 
+          <h2
             className="h1-bold mb-2"
             data-aos="fade-down"
             data-aos-duration="600"
@@ -74,16 +74,20 @@ export default function Page() {
                     src={`${IMAGE_BASE_URL}${image}`}
                     alt="about shape"
                     className="w-full max-w-[408px]"
-                    data-aos={image_position === "right" ? "fade-right" : "fade-left"}
+                    data-aos={
+                      image_position === "right" ? "fade-right" : "fade-left"
+                    }
                     data-aos-duration="700"
                     data-aos-delay={index * 200 + 200}
                   />
                   <div
-                    data-aos={image_position === "right" ? "fade-left" : "fade-right"}
+                    data-aos={
+                      image_position === "right" ? "fade-left" : "fade-right"
+                    }
                     data-aos-duration="700"
                     data-aos-delay={index * 200 + 300}
                   >
-                    <h2 
+                    <h2
                       className="h1-bold mb-2"
                       data-aos="fade-down"
                       data-aos-duration="600"
@@ -105,11 +109,7 @@ export default function Page() {
           })}
         </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="200"
-      >
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
         <Partners />
       </div>
     </>

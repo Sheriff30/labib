@@ -28,7 +28,7 @@ export default function Page() {
   return (
     <div className="py-4 pb-15 px-5">
       <div className="max-w-[1232px] mx-auto ">
-        <div 
+        <div
           className="mb-6"
           data-aos="fade-down"
           data-aos-duration="600"
@@ -40,14 +40,14 @@ export default function Page() {
         <div className="max-w-[1022px] mx-auto grid gap-15">
           {text_section?.map((item, index) => {
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex flex-col gap-4"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay={200 + index * 150}
               >
-                <div 
+                <div
                   className="h1-bold"
                   data-aos="fade-down"
                   data-aos-duration="600"
@@ -84,17 +84,21 @@ export default function Page() {
                     src={`${IMAGE_BASE_URL}${image}`}
                     alt="fields"
                     className="max-w-[245px] w-full"
-                    data-aos={image_position === "right" ? "fade-right" : "fade-left"}
+                    data-aos={
+                      image_position === "right" ? "fade-right" : "fade-left"
+                    }
                     data-aos-duration="700"
                     data-aos-delay={index * 200 + 200}
                   />
-                  <div 
+                  <div
                     className="flex flex-col gap-2"
-                    data-aos={image_position === "right" ? "fade-left" : "fade-right"}
+                    data-aos={
+                      image_position === "right" ? "fade-left" : "fade-right"
+                    }
                     data-aos-duration="700"
                     data-aos-delay={index * 200 + 300}
                   >
-                    <div 
+                    <div
                       className="h2-bold"
                       data-aos="fade-down"
                       data-aos-duration="600"

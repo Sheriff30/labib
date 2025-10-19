@@ -47,7 +47,7 @@ export default function Page() {
   return (
     <div className="py-4 px-5">
       <div className="max-w-[1232px] mx-auto">
-        <div 
+        <div
           className="mb-6"
           data-aos="fade-down"
           data-aos-duration="600"
@@ -56,7 +56,7 @@ export default function Page() {
           <Breadcrumbs link1="/inspiration" title1="مساحة الإلهام" />
         </div>
         <div className="flex justify-between items-center gap-2 md:gap-6 mb-8 flex-wrap">
-          <div 
+          <div
             className="h1-bold"
             data-aos="fade-right"
             data-aos-duration="700"
@@ -65,7 +65,7 @@ export default function Page() {
             مبادراتنا
           </div>
 
-          <div 
+          <div
             className="gap-4 h4-light items-center hidden lg:flex"
             data-aos="fade-left"
             data-aos-duration="700"
@@ -88,7 +88,7 @@ export default function Page() {
               </div>
             ))}
           </div>
-          <div 
+          <div
             className="block lg:hidden"
             data-aos="fade-left"
             data-aos-duration="700"
@@ -109,7 +109,7 @@ export default function Page() {
         </div>
 
         {filteredData.length === 0 ? (
-          <div 
+          <div
             className="text-center py-8"
             data-aos="fade-up"
             data-aos-duration="600"
@@ -120,8 +120,8 @@ export default function Page() {
             </p>
           </div>
         ) : (
-          <div 
-            className="grid-masonry" 
+          <div
+            className="grid-masonry"
             dir="ltr"
             data-aos="fade-up"
             data-aos-duration="800"
@@ -160,7 +160,7 @@ export default function Page() {
 
         {/* Pagination */}
         {inspiration?.last_page > 1 && (
-          <div 
+          <div
             className="flex justify-center items-center mt-8 gap-2"
             data-aos="fade-up"
             data-aos-duration="600"
@@ -177,7 +177,7 @@ export default function Page() {
               السابق
             </button>
 
-            <div 
+            <div
               className="flex gap-1"
               data-aos="fade-up"
               data-aos-duration="500"

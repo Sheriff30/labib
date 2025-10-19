@@ -37,52 +37,28 @@ export default function Page() {
       <div className="py-20 px-5">
         <div className="max-w-[1232px] mx-auto grid gap-10">
           {/* library */}
-          <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="100"
-          >
+          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
             <Latest data={latest} />
           </div>
           {/* banner */}
-          <div
-            data-aos="zoom-in"
-            data-aos-duration="600"
-            data-aos-delay="200"
-          >
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
             <Banner data={image_gallery} />
           </div>
           {/*  articles */}
-          <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="300"
-          >
+          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
             <Articles />
           </div>
           {/*  studies and research */}
-          <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="400"
-          >
+          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
             <Studies />
           </div>
           {/* news */}
-          <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="500"
-          >
+          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
             <News data={news} />
           </div>
         </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="600"
-        data-aos-delay="600"
-      >
+      <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
         <EmailForm />
       </div>
     </>

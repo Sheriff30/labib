@@ -5,14 +5,10 @@ function News({ data }) {
   const { title, items } = data?.data || {};
   return (
     <div className="flex flex-col gap-8 ">
-      <div
-        data-aos="fade-right"
-        data-aos-duration="600"
-        data-aos-delay="100"
-      >
+      <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
         <SectionHeader src="/news.svg" title={title} link="/news" />
       </div>
-      <div 
+      <div
         className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         data-aos="fade-up"
         data-aos-duration="700"

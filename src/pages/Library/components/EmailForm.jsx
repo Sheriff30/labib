@@ -15,7 +15,7 @@ function EmailForm() {
   return (
     <div className="px-5 py-8 bg-default">
       <div className="max-w-[1100px] mx-auto flex flex-col gap-3">
-        <p 
+        <p
           className="text-xl"
           data-aos="fade-up"
           data-aos-duration="600"
