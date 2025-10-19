@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { NewsCard } from "@/shared";
 import { Breadcrumbs } from "@/shared";
 import { Link } from "react-router-dom";
 import { usePage } from "../../hooks/content";
 import { cn } from "../../lib/utils";
 import { IMAGE_BASE_URL } from "../../lib/constants";
+import ServiceRequestModal from "../../components/ServiceRequestModal";
 
 export default function Page() {
   const { data, isLoading } = usePage("fields");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
 
   const text_section = data?.content?.filter(
     (section) => section.type === "text_section"
@@ -15,6 +18,16 @@ export default function Page() {
   const text_with_image = data?.content?.filter(
     (section) => section.type === "text_with_image"
   );
+
+  const handleServiceRequest = (serviceName) => {
+    setSelectedService(serviceName);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedService("");
+  };
 
   if (isLoading) {
     return (
@@ -113,15 +126,15 @@ export default function Page() {
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 500}
                     />
-                    <Link
-                      to="/"
-                      className="text-red underline text-lg font-bold hover:text-red-600 transition-colors duration-300"
+                    <button
+                      onClick={() => handleServiceRequest(title)}
+                      className="text-red underline text-lg font-bold hover:text-red-600 transition-colors duration-300 bg-transparent border-none cursor-pointer text-right"
                       data-aos="fade-up"
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 600}
                     >
                       طلب الخدمة
-                    </Link>
+                    </button>
                   </div>
                 </div>
               );
@@ -129,6 +142,13 @@ export default function Page() {
           </div>
         </div>
       </div>
+
+      {/* Service Request Modal */}
+      <ServiceRequestModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        serviceName={selectedService}
+      />
     </div>
   );
 }
