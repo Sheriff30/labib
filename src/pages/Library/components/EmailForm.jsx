@@ -15,7 +15,12 @@ function EmailForm() {
   return (
     <div className="px-5 py-8 bg-default">
       <div className="max-w-[1100px] mx-auto flex flex-col gap-3">
-        <p className="text-xl">
+        <p 
+          className="text-xl"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay="100"
+        >
           لأنك تهتم برفاه ونمو الطفل،انضم الآن إلى نشرتنا واحصل على أحدث
           المقالات والدراسات والتجارب التي تُلهمك وتمكنك من تحقيق تأثير حقيقي
           ومستدام.
@@ -23,6 +28,9 @@ function EmailForm() {
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
           className="grid grid-cols-[1fr_75px] gap-1.5"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="200"
         >
           <div>
             <input
@@ -55,6 +63,9 @@ function EmailForm() {
                 ? "bg-green-100 text-green-800 border border-green-300"
                 : "bg-red-100 text-red-800 border border-red-300"
             }`}
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay="300"
           >
             {submitMessage}
           </div>

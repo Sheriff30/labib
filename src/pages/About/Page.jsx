@@ -31,18 +31,33 @@ export default function Page() {
   return (
     <>
       <Hero data={hero} />
-      <div className="px-5 py-8">
+      <div 
+        className="px-5 py-8"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="100"
+      >
         <div className="max-w-[1232px] mx-auto">
-          <h2 className="h1-bold mb-2">{text_section?.data?.title} </h2>
+          <h2 
+            className="h1-bold mb-2"
+            data-aos="fade-down"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
+            {text_section?.data?.title}
+          </h2>
           <p
             className="h3-light"
             dangerouslySetInnerHTML={{ __html: text_section?.data?.text }}
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="400"
           />
-        </div>{" "}
+        </div>
       </div>
       <div className="px-5 py-8 lg:py-30">
         <div className="max-w-[1232px] mx-auto flex flex-col gap-10 lg:gap-30 ">
-          {text_with_image?.map((item) => {
+          {text_with_image?.map((item, index) => {
             const { title, text, image, image_position } = item?.data || {};
             return (
               <Fragment key={title}>
@@ -51,26 +66,52 @@ export default function Page() {
                     "lg:flex-row": image_position === "right",
                     "lg:flex-row-reverse": image_position === "left",
                   })}
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay={index * 200}
                 >
                   <img
                     src={`${IMAGE_BASE_URL}${image}`}
                     alt="about shape"
                     className="w-full max-w-[408px]"
+                    data-aos={image_position === "right" ? "fade-right" : "fade-left"}
+                    data-aos-duration="700"
+                    data-aos-delay={index * 200 + 200}
                   />
-                  <div>
-                    <h2 className="h1-bold mb-2">{title}</h2>
+                  <div
+                    data-aos={image_position === "right" ? "fade-left" : "fade-right"}
+                    data-aos-duration="700"
+                    data-aos-delay={index * 200 + 300}
+                  >
+                    <h2 
+                      className="h1-bold mb-2"
+                      data-aos="fade-down"
+                      data-aos-duration="600"
+                      data-aos-delay={index * 200 + 400}
+                    >
+                      {title}
+                    </h2>
                     <div
                       className="h4-light values"
                       dangerouslySetInnerHTML={{ __html: text }}
+                      data-aos="fade-up"
+                      data-aos-duration="600"
+                      data-aos-delay={index * 200 + 500}
                     />
-                  </div>{" "}
+                  </div>
                 </div>
               </Fragment>
             );
           })}
         </div>
       </div>
-      <Partners />
+      <div
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="200"
+      >
+        <Partners />
+      </div>
     </>
   );
 }

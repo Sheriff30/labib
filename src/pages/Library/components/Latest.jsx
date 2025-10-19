@@ -6,9 +6,20 @@ function Latest({ data }) {
 
   return (
     <div className="flex flex-col gap-8 ">
-      <SectionHeader src="/latest.svg" title={title} link="/latest" />
+      <div
+        data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-delay="100"
+      >
+        <SectionHeader src="/latest.svg" title={title} link="/latest" />
+      </div>
       <div className="grid gap-5 lg:grid-cols-2  ">
-        <div className="flex flex-col gap-5">
+        <div 
+          className="flex flex-col gap-5"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="200"
+        >
           <NewsCard
             title={items?.[0]?.title}
             description={items?.[0]?.content}
@@ -26,7 +37,12 @@ function Latest({ data }) {
             className="max-h-[200px] lg:max-h-[140px]"
           />
         </div>
-        <div className="grid grid-cols-2 gap-5 h-full ">
+        <div 
+          className="grid grid-cols-2 gap-5 h-full"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="300"
+        >
           <NewsCard
             variant="compact"
             title={items?.[2]?.title}

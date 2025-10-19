@@ -36,11 +36,20 @@ function Articles() {
 
   return (
     <div className="flex flex-col gap-8 ">
-      <SectionHeader src="/articles.svg" title="المقالات" link="/articles" />
+      <div
+        data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-delay="100"
+      >
+        <SectionHeader src="/articles.svg" title="المقالات" link="/articles" />
+      </div>
       <div className="grid gap-6 lg:grid-cols-2">
         <Link
           to={`/blog/${articles?.[0]?.slug}`}
           className="rounded-lg overflow-hidden w-full  relative"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="200"
         >
           <img
             src={`${IMAGE_BASE_URL}${articles?.[0]?.image}`}
@@ -59,7 +68,12 @@ function Articles() {
             </p>
           </div>
         </Link>
-        <div className="flex flex-col gap-5">
+        <div 
+          className="flex flex-col gap-5"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="300"
+        >
           <NewsCard
             variant="detailed"
             key={articles?.[1]?.id}
