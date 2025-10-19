@@ -24,12 +24,26 @@ export default function Form() {
         className="absolute bottom-0 left-0 "
       />
       <div className="max-w-[1020px] px-[20px] mx-auto flex flex-col lg:flex-row gap-[60px] lg:gap-[120px] items-center relative z-1">
-        <div className="flex gap-[12px] flex-col max-w-[320px]">
-          <h2 className="h1-bold border-b w-fit mx-auto lg:mx-0">
+        <div
+          className="flex gap-[12px] flex-col max-w-[320px]"
+          data-aos="fade-right"
+          data-aos-duration="700"
+        >
+          <h2
+            className="h1-bold border-b w-fit mx-auto lg:mx-0"
+            data-aos="fade-down"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             اتصل بـ لبيب
           </h2>
 
-          <p className="h4-light text-center lg:text-start">
+          <p
+            className="h4-light text-center lg:text-start"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="400"
+          >
             كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
             المستقبل
           </p>
@@ -37,6 +51,9 @@ export default function Form() {
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
           className="grid lg:grid-cols-2 gap-x-[16px] gap-y-[32px]  w-full"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100"
         >
           <label
             htmlFor="name"

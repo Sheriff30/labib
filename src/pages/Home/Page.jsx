@@ -28,15 +28,25 @@ export default function Page() {
       {/* Hero */}
       <Hero />
       {/* About */}
-      <About data={home} />
+      <div data-aos="fade-up" data-aos-duration="800">
+        <About data={home} />
+      </div>
       {/* Partners */}
-      <Partners />
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <Partners />
+      </div>
       {/* Fields */}
-      <Fields />
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <Fields />
+      </div>
       {/* Initiatives */}
-      <Initiatives />
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <Initiatives />
+      </div>
       {/* Form */}
-      <Form />
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <Form />
+      </div>
     </>
   );
 }

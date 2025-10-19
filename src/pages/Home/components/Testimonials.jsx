@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -18,7 +19,7 @@ export default function Testimonials() {
           modules={[Pagination, Autoplay]}
           pagination={false}
           autoplay={{
-            delay: 5000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           slidesPerView={1}

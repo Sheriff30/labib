@@ -24,7 +24,7 @@ export default function Footer() {
     },
     {
       icon: "/twitter.svg",
-      link: "https://x.com/mylabeeb?s=11",
+      link: "https://x.com/labeeb",
     },
     {
       icon: "/whatsapp.svg",
