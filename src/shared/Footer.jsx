@@ -4,23 +4,23 @@ export default function Footer() {
   const socialMedia = [
     {
       icon: "/tiktok.svg",
-      link: "https://www.tiktok.com/labeeb",
+      link: "https://www.tiktok.com/@mylabeeb?_t=ZS-8ypOJ56Kq1c&_r=1",
     },
     {
       icon: "/snapchat.svg",
-      link: "https://www.snapchat.com/labeeb",
+      link: "https://www.snapchat.com/mylabeeb",
     },
     {
       icon: "/youtube.svg",
-      link: "https://www.youtube.com/labeeb",
+      link: "https://www.youtube.com/@mylabeeb",
     },
     {
       icon: "/linkedin.svg",
-      link: "https://www.linkedin.com/company/labeeb",
+      link: "https://www.linkedin.com/company/mylabeeb/",
     },
     {
       icon: "/instagram.svg",
-      link: "https://www.instagram.com/labeeb",
+      link: "https://www.instagram.com/mylabeeb?igsh=MXV5ZWRtcjZncjV2bg%3D%3D&utm_source=qr",
     },
     {
       icon: "/twitter.svg",

@@ -110,7 +110,7 @@ export default function Page() {
         </div>
       </div>
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-        <Partners />
+        <Partners data={about} />
       </div>
     </>
   );

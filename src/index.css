@@ -244,15 +244,15 @@ body {
 .values ul {
   @apply flex flex-col gap-2;
   li {
-    @apply flex flex-col gap-1 p-2 border border-primary-default/25 shadow-xs rounded-lg text-base;
+    @apply flex flex-col gap-1 p-2 border border-[#EEF2F5] shadow-xs rounded-lg text-base;
   }
 
   li p:first-child {
-    @apply font-medium;
+    @apply font-bold text-[#4A5057];
   }
 
   li p:last-child {
-    @apply text-secondary-default;
+    @apply text-[#4A5057];
   }
 }
 
