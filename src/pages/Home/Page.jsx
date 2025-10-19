@@ -33,7 +33,7 @@ export default function Page() {
       </div>
       {/* Partners */}
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <Partners />
+        <Partners data={home} />
       </div>
       {/* Fields */}
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">

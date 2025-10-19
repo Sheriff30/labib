@@ -3,8 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { IMAGE_BASE_URL } from "../lib/constants";
 
-export default function Partners() {
+export default function Partners({ data }) {
+  const images =
+    data?.content?.filter((section) => section.type === "image_gallery")?.[0]
+      ?.data?.images || [];
+
+  console.log("Partners images:", images);
   return (
     <div className="py-[56px] px-[20px]">
       <div className="max-w-[1232px] mx-auto f">
@@ -67,24 +73,18 @@ export default function Partners() {
               },
             }}
           >
-            <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner1.png" alt="Partner" className="max-w-[65px]" />
-            </SwiperSlide>
-            <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner2.png" alt="Partner" className="max-w-[65px]" />
-            </SwiperSlide>
-            <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner3.png" alt="Partner" className="max-w-[65px]" />
-            </SwiperSlide>
-            <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner4.png" alt="Partner" className="max-w-[65px]" />
-            </SwiperSlide>
-            <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner5.png" alt="Partner" className="max-w-[65px]" />
-            </SwiperSlide>
-            <SwiperSlide className="!flex justify-center items-center">
-              <img src="/partner6.png" alt="Partner" className="max-w-[65px]" />
-            </SwiperSlide>
+            {images.map((image, index) => (
+              <SwiperSlide
+                key={index}
+                className="!flex justify-center items-center"
+              >
+                <img
+                  src={`${IMAGE_BASE_URL}${image}`}
+                  alt="Partner"
+                  className="max-w-[65px]"
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
           <div className="swiper-button-next-custom cursor-pointer  flex items-center justify-center">
             <img
