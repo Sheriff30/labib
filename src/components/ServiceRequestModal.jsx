@@ -74,11 +74,11 @@ export default function ServiceRequestModal({
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
       onClick={handleOverlayClick}
     >
-      <div className="bg-[#004D1E4A] rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+      <div className="bg-white rounded-lg max-w-2xl w-full no-scrollbar overflow-auto max-h-[90vh] lg:h-auto relative ">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-white hover:text-gray-300 hover:bg-white/10 rounded-full transition-colors z-10"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-black hover:text-gray-300 hover:bg-white/10 rounded-full transition-colors z-10"
           type="button"
           aria-label="إغلاق النموذج"
         >
@@ -100,27 +100,27 @@ export default function ServiceRequestModal({
         </button>
 
         {/* Form content - identical to contact form */}
-        <div className="py-[40px] relative bg-[#004D1E4A] backdrop-blur-3xl">
+        <div className="py-[40px] relative ">
           <img
-            src="/form-shape1.svg"
+            src="/form-shape11.svg"
             alt="form-shape1"
             className="absolute top-0 right-0 opacity-50"
           />
           <img
-            src="/form-shape2.svg"
+            src="/form-shape22.svg"
             alt="form-shape2"
             className="absolute bottom-0 left-0 opacity-50"
           />
 
           <div className="max-w-[600px] px-[20px] mx-auto flex flex-col gap-[40px] items-center relative z-1">
             <div className="flex gap-[12px] flex-col text-center">
-              <h2 className="h1-bold border-b w-fit mx-auto text-white">
+              <h2 className="h3-bold border-b w-fit mx-auto text-black">
                 طلب خدمة
               </h2>
               {serviceName && (
-                <p className="h4-medium text-white/90">{serviceName}</p>
+                <p className="h4-medium text-black">{serviceName}</p>
               )}
-              <p className="h4-light text-white/80">
+              <p className="text-base text-black">
                 كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
                 المستقبل
               </p>
@@ -132,14 +132,14 @@ export default function ServiceRequestModal({
             >
               <label
                 htmlFor="modal-name"
-                className="flex flex-col gap-[4px] body-medium text-white"
+                className="flex flex-col gap-[4px] body-medium text-black"
               >
                 الإسم
                 <input
                   {...form.register("name")}
                   type="text"
                   id="modal-name"
-                  className="border-b border-white outline-none bg-transparent text-white placeholder-white/70"
+                  className="border-b border-black outline-none bg-transparent text-black placeholder-white/70"
                 />
                 {form.formState.errors.name && (
                   <span className="text-red-500 text-sm mt-1">
@@ -150,14 +150,14 @@ export default function ServiceRequestModal({
 
               <label
                 htmlFor="modal-phone"
-                className="flex flex-col gap-[4px] body-medium text-white"
+                className="flex flex-col gap-[4px] body-medium text-black"
               >
                 رقم الجوال
                 <input
                   {...form.register("phone")}
                   type="tel"
                   id="modal-phone"
-                  className="border-b border-white outline-none bg-transparent text-white placeholder-white/70"
+                  className="border-b border-black outline-none bg-transparent text-black placeholder-white/70"
                 />
                 {form.formState.errors.phone && (
                   <span className="text-red-500 text-sm mt-1">
@@ -168,14 +168,14 @@ export default function ServiceRequestModal({
 
               <label
                 htmlFor="modal-email"
-                className="col-span-full flex flex-col gap-[4px] body-medium text-white"
+                className="col-span-full flex flex-col gap-[4px] body-medium text-black"
               >
                 البريد الالكتروني
                 <input
                   {...form.register("email")}
                   type="email"
                   id="modal-email"
-                  className="border-b border-white outline-none bg-transparent text-white placeholder-white/70"
+                  className="border-b border-black outline-none bg-transparent text-black placeholder-white/70"
                 />
                 {form.formState.errors.email && (
                   <span className="text-red-500 text-sm mt-1">
@@ -186,13 +186,13 @@ export default function ServiceRequestModal({
 
               <label
                 htmlFor="modal-message"
-                className="col-span-full flex flex-col gap-[4px] body-medium text-white"
+                className="col-span-full flex flex-col gap-[4px] body-medium text-black"
               >
                 التفاصيل
                 <textarea
                   {...form.register("message")}
                   id="modal-message"
-                  className="border-b border-white outline-none bg-transparent text-white placeholder-white/70 resize-none"
+                  className="border-b border-black outline-none bg-transparent text-black placeholder-white/70 resize-none"
                   rows={3}
                 />
                 {form.formState.errors.message && (
@@ -205,7 +205,7 @@ export default function ServiceRequestModal({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="col-span-full p-[10px] border rounded-[16px] cursor-pointer cta-large flex items-center gap-[8px] justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors text-white border-white"
+                className="col-span-full p-[10px] border rounded-[16px] cursor-pointer cta-large flex items-center gap-[8px] justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors text-black border-black"
               >
                 {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
                 <img
@@ -220,7 +220,7 @@ export default function ServiceRequestModal({
                 <div
                   className={`col-span-full p-3 rounded-lg text-center ${
                     submitMessage.includes("بنجاح")
-                      ? "bg-green-500/20 text-green-200 border border-green-500/30"
+                      ? "bg-green-700 text-white border border-green-500/30"
                       : "bg-red-500/20 text-red-200 border border-red-500/30"
                   }`}
                 >

@@ -17,7 +17,7 @@ export default function Hero({ data }) {
         alt="hero shape"
         className="absolute left-0 ltr:right-0"
       />
-      <div className=" max-w-[1232px] pb-[125px]  mx-auto flex flex-col pt-[120px] lg:pt-[180px] px-[20px]  relative z-20 gap-10 lg:gap-[108px] ">
+      <div className=" max-w-[1232px] pb-[50px]  mx-auto flex flex-col pt-[120px] lg:pt-[180px] px-[20px]  relative z-20 gap-5 lg:gap-5 ">
         <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="200">
           <Breadcrumbs title1="حكاية لبيب" className="text-white" />
         </div>
@@ -31,14 +31,14 @@ export default function Hero({ data }) {
           />
           <div className="flex items-center justify-center gap-[50px] flex-wrap ">
             <div
-              className="text-white max-w-[522px] h4-medium text-center xl:text-start"
+              className="text-white max-w-[600px] h4-medium text-center xl:text-start"
               dangerouslySetInnerHTML={{ __html: text }}
               data-aos="fade-right"
               data-aos-duration="700"
               data-aos-delay="600"
             />
             <div
-              className="max-w-[568px] w-full"
+              className="max-w-[350px] w-full"
               data-aos="fade-left"
               data-aos-duration="700"
               data-aos-delay="800"

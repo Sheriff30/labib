@@ -10,7 +10,7 @@ export default function Initiatives() {
     <div className="pt-[23.5px] pb-[119.5px] px-[20px]">
       <div className="max-w-[1232px] mx-auto">
         <div className="flex gap-[24px] items-center justify-center text-center flex-col lg:flex-row lg:justify-between mb-[24px]">
-          <h1 className="h1-bold" data-aos="fade-down" data-aos-duration="600">
+          <h1 className="h2-bold" data-aos="fade-down" data-aos-duration="600">
             تتجسد في تجارب وشراكات مؤثرة
           </h1>
           <a

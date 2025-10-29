@@ -32,14 +32,14 @@ export default function Hero({ data }) {
           <div className="flex items-center justify-center gap-[50px] flex-wrap ">
             {" "}
             <div
-              className="text-white max-w-[522px] h4-medium text-center xl:text-start"
+              className="text-white max-w-[600px] h4-medium text-center xl:text-start"
               dangerouslySetInnerHTML={{ __html: text }}
               data-aos="fade-right"
               data-aos-duration="700"
               data-aos-delay="400"
             />
             <div
-              className="max-w-[568px] w-full"
+              className="max-w-[350px] w-full"
               data-aos="fade-left"
               data-aos-duration="700"
               data-aos-delay="400"

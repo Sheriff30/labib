@@ -267,3 +267,11 @@ body {
 .about-numbers ul li p:last-child {
   @apply text-[18px] leading-[29px];
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
