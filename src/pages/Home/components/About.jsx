@@ -44,7 +44,7 @@ export default function About({ data }) {
             data-aos-delay="100"
           >
             <div
-              className="h1-bold mb-[8px]"
+              className="h2-bold mb-[8px]"
               dangerouslySetInnerHTML={{ __html: text_with_image?.data?.title }}
             />
             <p

@@ -14,7 +14,7 @@ export default function Fields() {
     <div className="bg-[#F9FAFB] py-[100px] px-[20px]">
       <div className="max-w-[1232px] mx-auto">
         <div className="flex gap-[24px] items-center justify-center text-center flex-col lg:flex-row lg:justify-between mb-[56px]">
-          <h1 className="h1-bold" data-aos="fade-down" data-aos-duration="600">
+          <h1 className="h2-bold" data-aos="fade-down" data-aos-duration="600">
             رحلة تعليمية شاملة لأجيال المستقبل
           </h1>
           <a
@@ -36,7 +36,7 @@ export default function Fields() {
             return (
               <div
                 key={index}
-                className="flex flex-col bg-white px-[16px] py-[70px] items-center text-center xl:items-start xl:text-start shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px] hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col bg-white px-[16px] py-[70px] items-center text-center xl:items-start xl:text-start shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px] hover:shadow-lg transition-shadow duration-600 group cursor-pointer"
                 data-aos="fade-up"
                 data-aos-duration="700"
                 data-aos-delay={index * 150}
@@ -50,7 +50,7 @@ export default function Fields() {
                   data-aos-delay={index * 150 + 200}
                 />
                 <h2
-                  className="h3-bold mb-[13px]"
+                  className="font-semibold text-[28px] mb-[13px] group-hover:text-orange transition-colors duration-600"
                   data-aos="fade-up"
                   data-aos-duration="600"
                   data-aos-delay={index * 150 + 300}
@@ -58,7 +58,7 @@ export default function Fields() {
                   {title}
                 </h2>
                 <p
-                  className="h4-light"
+                  className=" group-hover:text-orange transition-colors duration-600 font-light  text-[20px]"
                   dangerouslySetInnerHTML={{ __html: text }}
                   data-aos="fade-up"
                   data-aos-duration="600"

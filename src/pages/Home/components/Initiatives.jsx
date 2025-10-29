@@ -1,4 +1,5 @@
 import React from "react";
+import FadeOverlay from "./FadeOverlay";
 import { useArticles } from "../../../hooks/content";
 import { Link } from "react-router-dom";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
@@ -31,7 +32,7 @@ export default function Initiatives() {
           >
             <Link
               to={`/blog/${inspiration?.data?.[0]?.slug}`}
-              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
+              className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
               data-aos-duration="600"
               data-aos-delay="200"
@@ -41,6 +42,8 @@ export default function Initiatives() {
                 alt="initiatives image"
                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
+              {/* Black overlay fades out when in view */}
+              <FadeOverlay />
               <div className="pb-2 absolute top-0 bg-black/20  lg:opacity-0 group-hover:opacity-100 transition-all duration-500  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
@@ -52,7 +55,7 @@ export default function Initiatives() {
             </Link>
             <Link
               to={`/blog/${inspiration?.data?.[1]?.slug}`}
-              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
+              className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
               data-aos-duration="600"
               data-aos-delay="300"
@@ -62,6 +65,7 @@ export default function Initiatives() {
                 alt="initiatives image"
                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
+              <FadeOverlay />
               <div className="pb-2 absolute top-0 bg-black/20  lg:opacity-0 group-hover:opacity-100 transition-all duration-500  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
@@ -73,7 +77,7 @@ export default function Initiatives() {
             </Link>
             <Link
               to={`/blog/${inspiration?.data?.[2]?.slug}`}
-              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
+              className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
               data-aos-duration="600"
               data-aos-delay="400"
@@ -83,6 +87,7 @@ export default function Initiatives() {
                 alt="initiatives image"
                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
+              <FadeOverlay />
               <div className="pb-2 absolute top-0 bg-black/20  lg:opacity-0 group-hover:opacity-100 transition-all duration-500  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
@@ -94,7 +99,7 @@ export default function Initiatives() {
             </Link>
             <Link
               to={`/blog/${inspiration?.data?.[3]?.slug}`}
-              className=" relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
+              className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
               data-aos-duration="600"
               data-aos-delay="500"
@@ -104,6 +109,7 @@ export default function Initiatives() {
                 alt="initiatives image"
                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
+              <FadeOverlay />
               <div className="pb-2 absolute top-0 bg-black/20  lg:opacity-0 group-hover:opacity-100 transition-all duration-500  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
@@ -127,6 +133,7 @@ export default function Initiatives() {
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               object-cover
             />
+            <FadeOverlay />
             <div className="pb-2 absolute top-0 bg-black/20  lg:opacity-0 group-hover:opacity-100 transition-all duration-500  h-full flex flex-col w-full justify-end items-center text-center gap-[4px] ">
               <h4
                 className=" text-sm lg:text-xl font-bold text-white"

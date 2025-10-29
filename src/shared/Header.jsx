@@ -128,10 +128,6 @@ export default function Header() {
       href: "/library",
     },
     {
-      label: "الشروط والأحكام",
-      href: "/terms",
-    },
-    {
       label: "اتصل بنا",
       href: "/#contact",
     },

@@ -16,7 +16,7 @@ export default function Partners({ data }) {
       <div className="max-w-[1232px] mx-auto f">
         {/* Title */}
         <h2
-          className="h1-bold text-center mb-[32px]"
+          className="h2-bold text-center mb-[32px]"
           data-aos="fade-down"
           data-aos-duration="600"
         >
