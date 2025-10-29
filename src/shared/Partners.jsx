@@ -81,7 +81,7 @@ export default function Partners({ data }) {
                 <img
                   src={`${IMAGE_BASE_URL}${image}`}
                   alt="Partner"
-                  className="max-w-[65px]"
+                  className="max-w-[80px] h-full w-full max-h-[80px] object-cover"
                 />
               </SwiperSlide>
             ))}

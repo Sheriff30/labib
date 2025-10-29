@@ -4,7 +4,7 @@ import { Header, Footer, Register } from "./";
 
 export default function Layout() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       {/* Header */}
       <Header />
       <div className="flex-1">

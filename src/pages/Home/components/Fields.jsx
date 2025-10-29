@@ -1,4 +1,5 @@
 import React from "react";
+import FieldsSwiper from "./FieldsSwiper";
 import { usePage } from "../../../hooks/content";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
 
@@ -26,7 +27,10 @@ export default function Fields() {
             عرض كل المجالات
           </a>
         </div>
-        <div className="grid grid-cols-1 gap-[16px] lg:grid-cols-3 ">
+        {/* Mobile Swiper */}
+        <FieldsSwiper fields={fields} />
+        {/* Desktop grid */}
+        <div className="hidden lg:grid grid-cols-3 gap-[16px]">
           {fields?.map((field, index) => {
             const { title, text, image } = field?.data || {};
             return (

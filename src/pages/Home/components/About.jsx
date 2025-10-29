@@ -51,17 +51,24 @@ export default function About({ data }) {
               className="mb-[24px] h3-light"
               dangerouslySetInnerHTML={{ __html: text_with_image?.data?.text }}
             />
+            <div className="flex justify-between gap-1 items-center">
+              <a
+                href="/about"
+                className="bg-[#0E2C43] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-white hover:bg-[#1a3a5c] transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="400"
+              >
+                <div>الحكاية الكاملة</div>
+                <img src="/arrow.svg" alt="arrow" />
+              </a>
 
-            <a
-              href="/about"
-              className="bg-[#0E2C43] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-white hover:bg-[#1a3a5c] transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="400"
-            >
-              <div>الحكاية الكاملة</div>
-              <img src="/arrow.svg" alt="arrow" />
-            </a>
+              <img
+                src={`${IMAGE_BASE_URL}${text_with_image?.data?.image}`}
+                alt="about labeeb image"
+                className=" w-full max-w-[136px] lg:max-w-[207px] block lg:hidden"
+              />
+            </div>
           </div>
           <div
             className="flex justify-start w-full"
@@ -72,7 +79,7 @@ export default function About({ data }) {
             <img
               src={`${IMAGE_BASE_URL}${text_with_image?.data?.image}`}
               alt="about labeeb image"
-              className=" w-full max-w-[136px] lg:max-w-[207px]"
+              className=" w-full max-w-[136px] lg:max-w-[207px] hidden lg:block"
             />
           </div>
         </div>
