@@ -2,6 +2,7 @@ import React from "react";
 import FieldsSwiper from "./FieldsSwiper";
 import { usePage } from "../../../hooks/content";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { Link } from "react-router-dom";
 
 export default function Fields() {
   const { data } = usePage("fields");
@@ -34,12 +35,13 @@ export default function Fields() {
           {fields?.map((field, index) => {
             const { title, text, image } = field?.data || {};
             return (
-              <div
+              <Link
                 key={index}
                 className="flex flex-col bg-white px-[16px] py-[70px] items-center text-center xl:items-start xl:text-start shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px] hover:shadow-lg transition-shadow duration-600 group cursor-pointer"
                 data-aos="fade-up"
                 data-aos-duration="700"
                 data-aos-delay={index * 150}
+                to={"/fields"}
               >
                 <img
                   src={`${IMAGE_BASE_URL}${image}`}
@@ -50,7 +52,7 @@ export default function Fields() {
                   data-aos-delay={index * 150 + 200}
                 />
                 <h2
-                  className="font-semibold text-[28px] mb-[13px] group-hover:text-orange transition-colors duration-600"
+                  className="font-semibold text-[28px] text-center mb-[13px] group-hover:text-orange transition-colors duration-600"
                   data-aos="fade-up"
                   data-aos-duration="600"
                   data-aos-delay={index * 150 + 300}
@@ -64,7 +66,7 @@ export default function Fields() {
                   data-aos-duration="600"
                   data-aos-delay={index * 150 + 400}
                 />
-              </div>
+              </Link>
             );
           })}
         </div>

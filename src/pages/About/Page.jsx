@@ -20,7 +20,7 @@ export default function Page() {
 
   if (isLoading) {
     return (
-      <div className="py-4 px-5 h-200 flex justify-center items-center bg-yellow">
+      <div className="py-4 px-5 h-[664px] flex justify-center items-center bg-yellow">
         <div className="max-w-[1232px] mx-auto text-center">
           جاري التحميل...
         </div>
@@ -39,7 +39,7 @@ export default function Page() {
       >
         <div className="max-w-[1232px] mx-auto">
           <h2
-            className="h1-bold mb-2"
+            className="h2-bold mb-2"
             data-aos="fade-down"
             data-aos-duration="600"
             data-aos-delay="200"
@@ -47,7 +47,7 @@ export default function Page() {
             {text_section?.data?.title}
           </h2>
           <p
-            className="h3-light"
+            className="h4-light"
             dangerouslySetInnerHTML={{ __html: text_section?.data?.text }}
             data-aos="fade-up"
             data-aos-duration="700"
@@ -73,7 +73,7 @@ export default function Page() {
                   <img
                     src={`${IMAGE_BASE_URL}${image}`}
                     alt="about shape"
-                    className="w-full max-w-[408px]"
+                    className="w-full max-w-[350px]"
                     data-aos={
                       image_position === "right" ? "fade-right" : "fade-left"
                     }
@@ -88,7 +88,7 @@ export default function Page() {
                     data-aos-delay={index * 200 + 300}
                   >
                     <h2
-                      className="h1-bold mb-2"
+                      className="h2-bold mb-2"
                       data-aos="fade-down"
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 400}

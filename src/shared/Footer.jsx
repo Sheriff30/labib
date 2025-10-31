@@ -28,7 +28,7 @@ export default function Footer() {
     },
     {
       icon: "/whatsapp.svg",
-      link: "https://wa.me/966556633936",
+      link: "https://wa.me/966556838484",
     },
   ];
 
@@ -120,8 +120,13 @@ export default function Footer() {
             </div>
             <div className="caption-medium-english text-white flex items-center gap-[6.5px]">
               <img src="/phone.svg" alt="phone" />
-              <a dir="ltr" href="tel:+966556633936">
-                +966556633936
+
+              <a dir="ltr" href="tel:+966556838899">
+                +966556838899
+              </a>
+              <span className="mx-2">|</span>
+              <a dir="ltr" href="tel:+966556838484">
+                +966556838484
               </a>
             </div>
           </div>

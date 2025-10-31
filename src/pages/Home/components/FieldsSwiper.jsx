@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { Link } from "react-router-dom";
 
 export default function FieldsSwiper({ fields }) {
   return (
@@ -22,7 +23,10 @@ export default function FieldsSwiper({ fields }) {
               className="  
             !h-auto"
             >
-              <div className="flex flex-col flex-shrink-0 items-center bg-white px-[16px] py-[70px] h-full text-center shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px] hover:shadow-lg transition-shadow duration-300">
+              <Link
+                to={"/fields"}
+                className="flex flex-col flex-shrink-0 items-center bg-white px-[16px] py-[70px] h-full text-center shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px] hover:shadow-lg transition-shadow duration-300"
+              >
                 <img
                   src={`${IMAGE_BASE_URL}${image}`}
                   alt={title}
@@ -33,7 +37,7 @@ export default function FieldsSwiper({ fields }) {
                   className="h4-light"
                   dangerouslySetInnerHTML={{ __html: text }}
                 />
-              </div>
+              </Link>
             </SwiperSlide>
           );
         })}

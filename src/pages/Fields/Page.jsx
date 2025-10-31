@@ -96,7 +96,7 @@ export default function Page() {
                   <img
                     src={`${IMAGE_BASE_URL}${image}`}
                     alt="fields"
-                    className="max-w-[245px] w-full"
+                    className="max-w-[245px]   h-full w-full"
                     data-aos={
                       image_position === "right" ? "fade-right" : "fade-left"
                     }

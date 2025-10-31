@@ -24,7 +24,7 @@ export default function Page() {
 
   if (isLoading) {
     return (
-      <div className="py-4 px-5 h-200 flex justify-center items-center bg-secondary-default">
+      <div className="py-4 px-5 h-[664px] flex justify-center items-center bg-secondary-default">
         <div className="max-w-[1232px] mx-auto text-center">
           جاري التحميل...
         </div>

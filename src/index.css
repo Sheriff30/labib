@@ -244,7 +244,7 @@ body {
 .values ul {
   @apply flex flex-col gap-2;
   li {
-    @apply flex flex-col gap-1 p-2 border border-[#EEF2F5] shadow-xs rounded-lg text-base;
+    @apply flex flex-col gap-1 p-2 border border-[#EEF2F5] shadow-xs rounded-lg text-[20px] leading-[34px];
   }
 
   li p:first-child {
