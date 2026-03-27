@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/shared";
 export default function Hero() {
   return (
     <div className="bg-[#F06827] pt-[90px] lg:pt-[150px] relative">
-      <div className="display2-bold text-white text-center">
+      <div className="display2-bold text-white text-center pb-6">
         نـبــــنــــــي الاحــــــــــلام <br />
         ونصنع المستقبل
       </div>

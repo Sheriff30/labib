@@ -22,7 +22,7 @@
 /* Custom Fonts */
 @font-face {
   font-family: "Labeeb-Arabic";
-  src: url("/fonts/Labeeb-Arabic-Light.ttf") format("truetype");
+  src: url("/fonts/ArabicLabeebFont-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: "Labeeb-Arabic";
-  src: url("/fonts/Labeeb-Arabic-Medium.ttf") format("truetype");
+  src: url("/fonts/ArabicLabeebFont-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -38,7 +38,7 @@
 
 @font-face {
   font-family: "Labeeb-Arabic";
-  src: url("/fonts/Labeeb-Arabic-Bold.ttf") format("truetype");
+  src: url("/fonts/ArabicLabeebFont-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
