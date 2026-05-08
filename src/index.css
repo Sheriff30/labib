@@ -3,8 +3,10 @@
 /* Font Fallback Variables */
 
 @theme inline {
-  --font-arabic: "Labeeb-Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
-  --font-english: "Labeeb-English", "Segoe UI", "Tahoma", "Arial", sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", "Segoe UI", "Tahoma", "Arial",
+    sans-serif;
+  --font-english: "IBM Plex Sans Arabic", "Segoe UI", "Tahoma", "Arial",
+    sans-serif;
   --color-yellow: #ffd127;
   --color-blue: #1685c6;
   --color-offwhite: #eef2f5;
@@ -19,50 +21,58 @@
   --color-light-blue: #e3f0fb;
 }
 
-/* Custom Fonts */
+/* IBM Plex Sans Arabic — files in /public/fonts/fonts2 */
 @font-face {
-  font-family: "Labeeb-Arabic";
-  src: url("/fonts/ArabicLabeebFont-Light.ttf") format("truetype");
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Labeeb-Arabic";
-  src: url("/fonts/ArabicLabeebFont-Medium.ttf") format("truetype");
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Labeeb-Arabic";
-  src: url("/fonts/ArabicLabeebFont-Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-SemiBold.ttf") format("truetype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Labeeb-English";
-  src: url("/fonts/Labeeb-English-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Labeeb-English";
-  src: url("/fonts/Labeeb-English-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Labeeb-English";
-  src: url("/fonts/Labeeb-English-Bold.ttf") format("truetype");
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/fonts2/IBMPlexSansArabic-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
