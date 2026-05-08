@@ -131,7 +131,7 @@ export default function Page() {
               <Link
                 to={`/blog/${item.slug}`}
                 key={item.id}
-                className={`rounded-lg overflow-hidden w-full relative group cursor-pointer text-center gallery${
+                className={`rounded-lg overflow-hidden w-full relative cursor-pointer text-center gallery${
                   index + 1
                 }`}
                 data-aos="zoom-in"
@@ -143,7 +143,8 @@ export default function Page() {
                   alt={item.title}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute top-0 left-0 w-full h-full xl:opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-navy px-4 py-15 flex flex-col gap-2 text-white justify-end items-center">
+                {/* Hover caption (tags / title / excerpt) — disabled; content was not useful on hover */}
+                {/* <div className="absolute top-0 left-0 w-full h-full xl:opacity-0 xl:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-navy px-4 py-15 flex flex-col gap-2 text-white justify-end items-center">
                   <div className="titles-bold px-[37px] py-[1.5px] bg-white/25 w-fit rounded-lg">
                     {item.tags}
                   </div>
@@ -152,7 +153,7 @@ export default function Page() {
                     className="body-light text-center"
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   />
-                </div>
+                </div> */}
               </Link>
             ))}
           </div>
