@@ -85,7 +85,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
         </button>
 
         {/* Brand panel */}
-        <div className="relative flex flex-col justify-center gap-[20px] overflow-hidden bg-[linear-gradient(135deg,#0f2837_0%,#004d1e_100%)] p-[40px] text-white">
+        <div className="relative flex flex-col justify-center gap-[20px] overflow-hidden bg-[linear-gradient(135deg,#0f2837_0%,#16425b_100%)] p-[40px] text-white">
           <img
             src="/form-shape1.svg"
             alt=""
@@ -100,13 +100,6 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
           />
 
           <div className="relative z-10 flex flex-col gap-[20px]">
-            <span className="flex h-[64px] w-[64px] items-center justify-center rounded-[16px] bg-white/10 backdrop-blur-sm">
-              <img
-                src="/school.svg"
-                alt="school"
-                className="h-[34px] w-[33px]"
-              />
-            </span>
             <h2 className="h3-bold leading-tight">سجّل اهتمام لمدرستك الآن</h2>
             <p className="body-light text-white/80">
               كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
@@ -200,7 +193,11 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               className="flex cursor-pointer items-center justify-center gap-[8px] rounded-[16px] bg-orange p-[12px] cta-large text-white transition-colors hover:bg-[#e55a1f] disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isSubmitting ? "جاري الإرسال..." : "إرسال"}
-              <img src="/submit.svg" alt="submit" className="h-[24px] w-[25px]" />
+              <img
+                src="/submit.svg"
+                alt="submit"
+                className="h-[24px] w-[25px] brightness-0 invert"
+              />
             </button>
 
             {submitMessage && (
