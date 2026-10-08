@@ -62,7 +62,7 @@ export default function Page() {
             data-aos-duration="700"
             data-aos-delay="200"
           >
-            مبادراتنا
+            ما صنعنا
           </div>
 
           <div

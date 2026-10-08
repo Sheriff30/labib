@@ -25,7 +25,7 @@ export default function Fields() {
             data-aos-duration="600"
             data-aos-delay="200"
           >
-            عرض كل المجالات
+            ما نقدّم
           </a>
         </div>
         {/* Mobile Swiper */}

@@ -20,7 +20,7 @@ export default function Initiatives() {
             data-aos-duration="600"
             data-aos-delay="200"
           >
-            عرض كل المبادرات
+            ما صنعنا
           </a>
         </div>
         <div className="grid  lg:grid-cols-2 gap-[12px] h-auto lg:h-130">

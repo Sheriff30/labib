@@ -93,11 +93,11 @@ export default function Header() {
       href: "/about",
     },
     {
-      label: "مجالاتنا",
+      label: "ما نقدّم",
       href: "/fields",
     },
     {
-      label: "مبادراتنا",
+      label: "ما صنعنا",
       href: "/initiatives",
     },
     {
@@ -116,11 +116,11 @@ export default function Header() {
       href: "/about",
     },
     {
-      label: "مجالاتنا",
+      label: "ما نقدّم",
       href: "/fields",
     },
     {
-      label: "مبادراتنا",
+      label: "ما صنعنا",
       href: "/initiatives",
     },
     {
