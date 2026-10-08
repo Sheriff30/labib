@@ -100,7 +100,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
           />
 
           <div className="relative z-10 flex flex-col gap-[20px]">
-            <h2 className="h3-bold leading-tight">سجّل اهتمام لمدرستك الآن</h2>
+            <h2 className="h3-bold leading-tight">سجّل اهتمام مدرستك الآن</h2>
             <p className="body-light text-white/80">
               كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
               المستقبل. سجّل بيانات مدرستك وسيتواصل معك فريق لبيب في أقرب وقت.
