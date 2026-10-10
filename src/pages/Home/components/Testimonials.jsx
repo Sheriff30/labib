@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -6,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 export default function Testimonials() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const totalSlides = 3;
   const swiperRef = useRef(null);
@@ -32,10 +34,9 @@ export default function Testimonials() {
             <div className="flex items-center gap-[24px] flex-col lg:flex-row">
               <img src="/testimonials.svg" alt="Testimonial" />
               <div className="flex flex-col gap-[16px] items-center lg:items-start">
-                <h1 className="h3-bold text-[#F06827]">نورة الغامدي</h1>
+                <h1 className="h3-bold text-[#F06827]">{t("نورة الغامدي")}</h1>
                 <p className="h3-light">
-                  "تجربتنا مع لبيب كانت ملهمة جدًا! قدروا يحولوا فكرة بسيطة
-                  لفعالية ثقافية أثرت في الأطفال بشكل رائع."
+                  {t('"تجربتنا مع لبيب كانت ملهمة جدًا! قدروا يحولوا فكرة بسيطة لفعالية ثقافية أثرت في الأطفال بشكل رائع."')}
                 </p>
               </div>
             </div>
@@ -44,10 +45,9 @@ export default function Testimonials() {
             <div className="flex items-center gap-[24px] flex-col lg:flex-row">
               <img src="/testimonials.svg" alt="Testimonial" />
               <div className="flex flex-col gap-[16px] items-center lg:items-start">
-                <h1 className="h3-bold text-[#F06827]">نورة الغامدي</h1>
+                <h1 className="h3-bold text-[#F06827]">{t("نورة الغامدي")}</h1>
                 <p className="h3-light">
-                  "تجربتنا مع لبيب كانت ملهمة جدًا! قدروا يحولوا فكرة بسيطة
-                  لفعالية ثقافية أثرت في الأطفال بشكل رائع."
+                  {t('"تجربتنا مع لبيب كانت ملهمة جدًا! قدروا يحولوا فكرة بسيطة لفعالية ثقافية أثرت في الأطفال بشكل رائع."')}
                 </p>
               </div>
             </div>
@@ -56,10 +56,9 @@ export default function Testimonials() {
             <div className="flex items-center gap-[24px] flex-col lg:flex-row">
               <img src="/testimonials.svg" alt="Testimonial" />
               <div className="flex flex-col gap-[16px] items-center lg:items-start">
-                <h1 className="h3-bold text-[#F06827]">نورة الغامدي</h1>
+                <h1 className="h3-bold text-[#F06827]">{t("نورة الغامدي")}</h1>
                 <p className="h3-light">
-                  "تجربتنا مع لبيب كانت ملهمة جدًا! قدروا يحولوا فكرة بسيطة
-                  لفعالية ثقافية أثرت في الأطفال بشكل رائع."
+                  {t('"تجربتنا مع لبيب كانت ملهمة جدًا! قدروا يحولوا فكرة بسيطة لفعالية ثقافية أثرت في الأطفال بشكل رائع."')}
                 </p>
               </div>
             </div>

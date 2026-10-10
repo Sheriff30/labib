@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -6,6 +7,7 @@ import "swiper/css/navigation";
 import { IMAGE_BASE_URL } from "../lib/constants";
 
 export default function Partners({ data }) {
+  const { t } = useTranslation();
   const images =
     data?.content?.filter((section) => section.type === "image_gallery")?.[0]
       ?.data?.images || [];
@@ -20,7 +22,7 @@ export default function Partners({ data }) {
           data-aos="fade-down"
           data-aos-duration="600"
         >
-          شركاء لبيب
+          {t("شركاء لبيب")}
         </h2>
 
         {/* Swuper Slider */}

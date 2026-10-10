@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   About,
@@ -12,13 +13,14 @@ import { Partners } from "@/shared";
 import { usePage } from "../../hooks/content";
 
 export default function Page() {
+  const { t } = useTranslation();
   const { data: home, isLoading } = usePage("home");
 
   if (isLoading) {
     return (
       <div className="py-4 px-5 h-200 flex justify-center items-center bg-orange">
         <div className="max-w-[1232px] mx-auto text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );

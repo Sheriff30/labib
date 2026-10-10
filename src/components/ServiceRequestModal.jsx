@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useContactForm } from "../hooks/contact";
 
 export default function ServiceRequestModal({
@@ -6,8 +7,10 @@ export default function ServiceRequestModal({
   onClose,
   serviceName = "",
 }) {
+  const { t } = useTranslation();
   const { form, onSubmit, isSubmitting } = useContactForm();
   const [submitMessage, setSubmitMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -51,10 +54,11 @@ export default function ServiceRequestModal({
 
     const result = await onSubmit(serviceData);
     setSubmitMessage(result.message);
+    setSubmitSuccess(Boolean(result.success));
 
     setTimeout(() => {
       setSubmitMessage("");
-      if (result.message.includes("بنجاح")) {
+      if (result.success) {
         onClose();
         form.reset();
       }
@@ -80,7 +84,7 @@ export default function ServiceRequestModal({
           onClick={onClose}
           className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-black hover:text-gray-300 hover:bg-white/10 rounded-full transition-colors z-10"
           type="button"
-          aria-label="إغلاق النموذج"
+          aria-label={t("إغلاق النموذج")}
         >
           <svg
             width="16"
@@ -115,14 +119,15 @@ export default function ServiceRequestModal({
           <div className="max-w-[600px] px-[20px] mx-auto flex flex-col gap-[40px] items-center relative z-1">
             <div className="flex gap-[12px] flex-col text-center">
               <h2 className="h3-bold border-b w-fit mx-auto text-black">
-                طلب خدمة
+                {t("طلب خدمة")}
               </h2>
               {serviceName && (
                 <p className="h4-medium text-black">{serviceName}</p>
               )}
               <p className="text-base text-black">
-                كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
-                المستقبل
+                {t(
+                  "كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال المستقبل"
+                )}
               </p>
             </div>
 
@@ -134,7 +139,7 @@ export default function ServiceRequestModal({
                 htmlFor="modal-name"
                 className="flex flex-col gap-[4px] body-medium text-black"
               >
-                الإسم
+                {t("الإسم")}
                 <input
                   {...form.register("name")}
                   type="text"
@@ -152,7 +157,7 @@ export default function ServiceRequestModal({
                 htmlFor="modal-phone"
                 className="flex flex-col gap-[4px] body-medium text-black"
               >
-                رقم الجوال
+                {t("رقم الجوال")}
                 <input
                   {...form.register("phone")}
                   type="tel"
@@ -170,7 +175,7 @@ export default function ServiceRequestModal({
                 htmlFor="modal-email"
                 className="col-span-full flex flex-col gap-[4px] body-medium text-black"
               >
-                البريد الالكتروني
+                {t("البريد الالكتروني")}
                 <input
                   {...form.register("email")}
                   type="email"
@@ -188,7 +193,7 @@ export default function ServiceRequestModal({
                 htmlFor="modal-message"
                 className="col-span-full flex flex-col gap-[4px] body-medium text-black"
               >
-                التفاصيل
+                {t("التفاصيل")}
                 <textarea
                   {...form.register("message")}
                   id="modal-message"
@@ -207,7 +212,7 @@ export default function ServiceRequestModal({
                 disabled={isSubmitting}
                 className="col-span-full p-[10px] border rounded-[16px] cursor-pointer cta-large flex items-center gap-[8px] justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors text-black border-black"
               >
-                {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
+                {isSubmitting ? t("جاري الإرسال...") : t("إرسال الطلب")}
                 <img
                   src="/submit2.svg"
                   alt="submit"
@@ -219,7 +224,7 @@ export default function ServiceRequestModal({
               {submitMessage && (
                 <div
                   className={`col-span-full p-3 rounded-lg text-center ${
-                    submitMessage.includes("بنجاح")
+                    submitSuccess
                       ? "bg-green-700 text-white border border-green-500/30"
                       : "bg-red-500/20 text-red-200 border border-red-500/30"
                   }`}

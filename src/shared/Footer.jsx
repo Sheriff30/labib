@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { LocalizedLink } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const socialMedia = [
     {
       icon: "/tiktok.svg",
@@ -34,51 +37,51 @@ export default function Footer() {
 
   const footerNav = [
     {
-      label: "الرئيسية",
+      label: t("الرئيسية"),
       link: "/",
     },
     {
-      label: "حكاية لبيب",
+      label: t("حكاية لبيب"),
       link: "/about",
     },
     {
-      label: "الخدمات",
+      label: t("الخدمات"),
       link: "/fields",
     },
     {
-      label: "مساحة الإلهام",
+      label: t("مساحة الإلهام"),
       link: "/inspiration",
     },
     {
-      label: "مكتبة لبيب",
+      label: t("مكتبة لبيب"),
       link: "/library",
     },
     {
-      label: "اتصل بنا",
+      label: t("اتصل بنا"),
       link: "/#contact",
     },
     {
-      label: "الشروط والأحكام",
+      label: t("الشروط والأحكام"),
       link: "/terms",
     },
     {
-      label: "الرحلات المدرسية",
+      label: t("الرحلات المدرسية"),
       link: "/inspiration",
     },
     {
-      label: " المعارض المدرسية",
+      label: t(" المعارض المدرسية"),
       link: "/inspiration",
     },
     {
-      label: " الانشطة المدرسية",
+      label: t(" الانشطة المدرسية"),
       link: "/inspiration",
     },
     {
-      label: "معسكرات صيفية",
+      label: t("معسكرات صيفية"),
       link: "/inspiration",
     },
     {
-      label: "منتجات مرحلة الطفولة",
+      label: t("منتجات مرحلة الطفولة"),
       link: "/inspiration",
     },
   ];
@@ -103,13 +106,13 @@ export default function Footer() {
           <div className="flex gap-[16px] max-w-[650px] text-center w-full mx-auto justify-center flex-wrap">
             {footerNav.map((i) => {
               return (
-                <a
-                  href={i.link}
+                <LocalizedLink
+                  to={i.link}
                   key={i.label}
                   className="caption-medium text-white"
                 >
                   {i.label}
-                </a>
+                </LocalizedLink>
               );
             })}
           </div>
@@ -133,25 +136,26 @@ export default function Footer() {
           <div className="flex justify-center gap-[32px] flex-col lg:flex-row items-center">
             <div className="text-center lg:text-start">
               <div className="title-bold text-white">
-                تبي تحول فكرتك لمشروع مميز يخاطب الأطفال؟
+                {t("تبي تحول فكرتك لمشروع مميز يخاطب الأطفال؟")}
               </div>
               <div className="caption-medium text-[#a5a7a8]">
-                كن جزءًا من رحلة الإلهام والتغيير، وقدم طلبك اليوم لنصمم معًا
-                تجربة تعليمية فريدة تترك أثرًا يدوم.
+                {t(
+                  "كن جزءًا من رحلة الإلهام والتغيير، وقدم طلبك اليوم لنصمم معًا تجربة تعليمية فريدة تترك أثرًا يدوم."
+                )}
               </div>
             </div>
-            <a
-              href="/"
+            <LocalizedLink
+              to="/"
               className="bg-[#DDE3E8] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-[#0F1113] "
             >
-              <div>قدم طلبك</div>
+              <div>{t("قدم طلبك")}</div>
               <img src="/arrow-black.svg" alt="arrow" />
-            </a>{" "}
+            </LocalizedLink>{" "}
           </div>
         </div>
       </div>
       <div className="py-[24px] px-[20px] caption-medium text-white text-center">
-        جميع الحقوق محفوظة © 2025 لبيب
+        {t("جميع الحقوق محفوظة © 2025 لبيب")}
       </div>
     </footer>
   );

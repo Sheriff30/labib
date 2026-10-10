@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NewsCard } from "@/shared";
 import { Breadcrumbs } from "@/shared";
 import { Link } from "react-router-dom";
 import { usePage } from "../../hooks/content";
 import { cn } from "../../lib/utils";
 import { IMAGE_BASE_URL } from "../../lib/constants";
+import { useLocalized } from "@/lib/i18n";
 import ServiceRequestModal from "../../components/ServiceRequestModal";
 
 export default function Page() {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const { data, isLoading } = usePage("fields");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
@@ -33,7 +37,7 @@ export default function Page() {
     return (
       <div className="py-4 pb-15 px-5">
         <div className="max-w-[1232px] mx-auto text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );
@@ -47,7 +51,7 @@ export default function Page() {
           data-aos-duration="600"
           data-aos-delay="100"
         >
-          <Breadcrumbs title1="المجالات" />
+          <Breadcrumbs title1={t("المجالات")} />
         </div>
 
         <div className="max-w-[1022px] mx-auto grid gap-15">
@@ -66,11 +70,11 @@ export default function Page() {
                   data-aos-duration="600"
                   data-aos-delay={300 + index * 150}
                 >
-                  {item?.data?.title}
+                  {localized(item?.data, "title")}
                 </div>
                 <div
                   className="h4-light"
-                  dangerouslySetInnerHTML={{ __html: item?.data?.text }}
+                  dangerouslySetInnerHTML={{ __html: localized(item?.data, "text") }}
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-delay={400 + index * 150}
@@ -81,7 +85,7 @@ export default function Page() {
 
           <div className="flex flex-col gap-6 lg:gap-30">
             {text_with_image?.map((item, index) => {
-              const { title, text, image, image_position } = item?.data || {};
+              const { title, image, image_position } = item?.data || {};
               return (
                 <div
                   key={title}
@@ -117,23 +121,23 @@ export default function Page() {
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 400}
                     >
-                      {title}
+                      {localized(item?.data, "title")}
                     </div>
                     <div
                       className="h4-light mb-1"
-                      dangerouslySetInnerHTML={{ __html: text }}
+                      dangerouslySetInnerHTML={{ __html: localized(item?.data, "text") }}
                       data-aos="fade-up"
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 500}
                     />
                     <button
-                      onClick={() => handleServiceRequest(title)}
+                      onClick={() => handleServiceRequest(localized(item?.data, "title"))}
                       className="text-red underline text-lg font-bold hover:text-red-600 transition-colors duration-300 bg-transparent border-none cursor-pointer text-right"
                       data-aos="fade-up"
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 600}
                     >
-                      طلب الخدمة
+                      {t("طلب الخدمة")}
                     </button>
                   </div>
                 </div>

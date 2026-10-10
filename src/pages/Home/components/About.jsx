@@ -1,7 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { LocalizedLink, useLocalized } from "@/lib/i18n";
 
 export default function About({ data }) {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const text_section = data?.content?.filter(
     (section) => section.type === "text_section"
   )?.[0];
@@ -18,14 +22,14 @@ export default function About({ data }) {
             data-aos="fade-down"
             data-aos-duration="600"
           >
-            {text_section?.data?.title}
+            {localized(text_section?.data, "title")}
           </h2>
           <div className="flex gap-[48px] justify-center flex-wrap">
             <div className="flex flex-col gap-[8px] text-center xl:text-start ">
               <div
                 className="about-numbers"
                 dangerouslySetInnerHTML={{
-                  __html: text_section?.data?.text,
+                  __html: localized(text_section?.data, "text"),
                 }}
                 data-aos="fade-up"
                 data-aos-duration="700"
@@ -45,23 +49,23 @@ export default function About({ data }) {
           >
             <div
               className="h2-bold mb-[8px]"
-              dangerouslySetInnerHTML={{ __html: text_with_image?.data?.title }}
+              dangerouslySetInnerHTML={{ __html: localized(text_with_image?.data, "title") }}
             />
             <p
               className="mb-[24px] h3-light"
-              dangerouslySetInnerHTML={{ __html: text_with_image?.data?.text }}
+              dangerouslySetInnerHTML={{ __html: localized(text_with_image?.data, "text") }}
             />
             <div className="flex justify-between gap-1 items-center">
-              <a
-                href="/about"
+              <LocalizedLink
+                to="/about"
                 className="bg-[#0E2C43] cursor-pointer py-[10.5px] px-[16px] flex items-center gap-[8px] w-fit rounded-[16px] cta-large text-white hover:bg-[#1a3a5c] transition-all duration-300"
                 data-aos="fade-up"
                 data-aos-duration="600"
                 data-aos-delay="400"
               >
-                <div>الحكاية الكاملة</div>
+                <div>{t("الحكاية الكاملة")}</div>
                 <img src="/arrow.svg" alt="arrow" />
-              </a>
+              </LocalizedLink>
 
               <img
                 src={`${IMAGE_BASE_URL}${text_with_image?.data?.image}`}

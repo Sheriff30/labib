@@ -1,8 +1,12 @@
 import React from "react";
 import { Breadcrumbs } from "@/shared";
 import { usePage } from "../../hooks/content";
+import { useTranslation } from "react-i18next";
+import { useLocalized } from "@/lib/i18n";
 
 export default function Page() {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const { data, isLoading } = usePage("terms");
 
   const text_section = data?.content?.filter(
@@ -15,7 +19,7 @@ export default function Page() {
     return (
       <div className="py-4 pb-15 px-5">
         <div className="max-w-[1232px] mx-auto text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );
@@ -24,19 +28,21 @@ export default function Page() {
     <>
       <div className="px-[20px] pb-[100px]">
         <div className="max-w-[1232px] mx-auto flex flex-col gap-10">
-          <Breadcrumbs title1="الشروط والأحكام" />
+          <Breadcrumbs title1={t("الشروط والأحكام")} />
 
           <div className="flex flex-col gap-[24px]">
             {hero?.map((item) => {
-              const { title, text } = item?.data || {};
+              const section = item?.data || {};
 
               return (
                 <div className="flex flex-col gap-[24px]">
-                  <h1 className="h1-bold">{title}</h1>
+                  <h1 className="h1-bold">{localized(section, "title")}</h1>
                   <div className="flex items-center gap-1 flex-wrap">
                     <div
                       className="titles-medium"
-                      dangerouslySetInnerHTML={{ __html: text }}
+                      dangerouslySetInnerHTML={{
+                        __html: localized(section, "text"),
+                      }}
                     />
                     <div>{updated_at.split("T")[0].replace(/-/g, "/")}</div>
                   </div>
@@ -45,14 +51,18 @@ export default function Page() {
             })}
             <div className="flex flex-col gap-[24px]">
               {text_section?.map((item, index) => {
-                const { title, text } = item?.data || {};
+                const section = item?.data || {};
 
                 return (
                   <div key={index}>
-                    <h2 className="title-bold">{title}</h2>
+                    <h2 className="title-bold">
+                      {localized(section, "title")}
+                    </h2>
                     <p
                       className="body-light"
-                      dangerouslySetInnerHTML={{ __html: text }}
+                      dangerouslySetInnerHTML={{
+                        __html: localized(section, "text"),
+                      }}
                     />
                   </div>
                 );

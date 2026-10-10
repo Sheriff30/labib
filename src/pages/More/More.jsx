@@ -1,12 +1,17 @@
 import { NewsCard } from "../../shared";
 import { IMAGE_BASE_URL } from "../../lib/constants";
+import { useTranslation } from "react-i18next";
+import { useLocalized } from "@/lib/i18n";
 
 function More({ data, isLoading, setCurrentPage, hero, isNews = false }) {
+  const { t } = useTranslation();
+  const localized = useLocalized();
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-[1232px] mx-auto px-5 py-16 text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );
@@ -27,10 +32,14 @@ function More({ data, isLoading, setCurrentPage, hero, isNews = false }) {
       <div className="bg-white">
         <div className="max-w-[1232px] mx-auto px-5 py-16">
           <div className="text-center">
-            <h1 className="h1-bold mb-4">{hero.content[0].data.title}</h1>
+            <h1 className="h1-bold mb-4">
+              {localized(hero.content[0].data, "title")}
+            </h1>
             <p
               className="h4-light text-secondary-default max-w-2xl mx-auto"
-              dangerouslySetInnerHTML={{ __html: hero.content[0].data.text }}
+              dangerouslySetInnerHTML={{
+                __html: localized(hero.content[0].data, "text"),
+              }}
             />
           </div>
         </div>
@@ -39,18 +48,18 @@ function More({ data, isLoading, setCurrentPage, hero, isNews = false }) {
       {/* Articles Section */}
       <div className="max-w-[1232px] mx-auto px-5 py-12">
         <div className="mb-8">
-          <h2 className="h2-bold mb-2">جميع المقالات</h2>
+          <h2 className="h2-bold mb-2">{t("جميع المقالات")}</h2>
           <p className="body-medium text-secondary-default">
-            عدد المقالات: {pagination.total}
+            {t("عدد المقالات:")} {pagination.total}
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 ">
           {articles.map((article) => (
             <NewsCard
-              title={article.title}
+              title={localized(article, "title")}
               key={article.id}
-              description={article.content}
+              description={localized(article, "content")}
               link={isNews ? `/news/${article.slug}` : `/blog/${article.slug}`}
               date={article.created_at}
               src={`${IMAGE_BASE_URL}${article.image}`}
@@ -67,7 +76,7 @@ function More({ data, isLoading, setCurrentPage, hero, isNews = false }) {
               disabled={pagination.currentPage === 1}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 transition-colors"
             >
-              السابق
+              {t("السابق")}
             </button>
 
             <div className="flex gap-1">
@@ -93,7 +102,7 @@ function More({ data, isLoading, setCurrentPage, hero, isNews = false }) {
               disabled={pagination.currentPage === pagination.lastPage}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-300 transition-colors"
             >
-              التالي
+              {t("التالي")}
             </button>
           </div>
         )}

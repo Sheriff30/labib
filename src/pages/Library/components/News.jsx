@@ -1,12 +1,18 @@
 import { SectionHeader } from "@/pages/Library/components";
 import { NewsCard } from "@/shared";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { useLocalized } from "@/lib/i18n";
 function News({ data }) {
-  const { title, items } = data?.data || {};
+  const localized = useLocalized();
+  const { items } = data?.data || {};
   return (
     <div className="flex flex-col gap-8 ">
       <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
-        <SectionHeader src="/news.svg" title={title} link="/news" />
+        <SectionHeader
+          src="/news.svg"
+          title={localized(data?.data, "title")}
+          link="/news"
+        />
       </div>
       <div
         className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
@@ -24,7 +30,7 @@ function News({ data }) {
             >
               <NewsCard
                 variant="compact"
-                title={item.title}
+                title={localized(item, "title")}
                 date={item.created_at}
                 link={`/news/${item?.slug}`}
                 src={`${IMAGE_BASE_URL}${item.image}`}

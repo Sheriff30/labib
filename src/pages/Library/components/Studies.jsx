@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
 import { SectionHeader } from "@/pages/Library/components";
 import { NewsCard } from "@/shared";
 import { useArticles } from "../../../hooks/content";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { useLocalized } from "@/lib/i18n";
 function Studies() {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const { data } = useArticles("studies");
 
   const studies = data?.data.slice(0, 2) || [];
@@ -11,7 +15,7 @@ function Studies() {
       <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
         <SectionHeader
           src="/studies.svg"
-          title="الدراسات والأبحاث"
+          title={t("الدراسات والأبحاث")}
           link="/studies"
         />
       </div>
@@ -26,8 +30,8 @@ function Studies() {
             <NewsCard
               variant="detailed"
               key={item.id}
-              title={item.title}
-              description={item.content}
+              title={localized(item, "title")}
+              description={localized(item, "content")}
               date={item.created_at}
               link={`/blog/${item?.slug}`}
               src={`${IMAGE_BASE_URL}${item.image}`}

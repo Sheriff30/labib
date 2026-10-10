@@ -1,27 +1,30 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import FadeOverlay from "./FadeOverlay";
 import { useArticles } from "../../../hooks/content";
-import { Link } from "react-router-dom";
+import { LocalizedLink, useLocalized } from "@/lib/i18n";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
 
 export default function Initiatives() {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const { data: inspiration } = useArticles("initiatives");
   return (
     <div className="pt-[23.5px] pb-[119.5px] px-[20px]">
       <div className="max-w-[1232px] mx-auto">
         <div className="flex gap-[24px] items-center justify-center text-center flex-col lg:flex-row lg:justify-between mb-[24px]">
           <h1 className="h2-bold" data-aos="fade-down" data-aos-duration="600">
-            تتجسد في تجارب وشراكات مؤثرة
+            {t("تتجسد في تجارب وشراكات مؤثرة")}
           </h1>
-          <a
-            href="/initiatives"
+          <LocalizedLink
+            to="/initiatives"
             className="h4-link text-[#F06827] hover:text-[#e55a1f] transition-colors duration-300"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="200"
           >
-            ما صنعنا
-          </a>
+            {t("ما صنعنا")}
+          </LocalizedLink>
         </div>
         <div className="grid  lg:grid-cols-2 gap-[12px] h-auto lg:h-130">
           <div
@@ -30,7 +33,7 @@ export default function Initiatives() {
             data-aos-duration="700"
             data-aos-delay="100"
           >
-            <Link
+            <LocalizedLink
               to={`/blog/${inspiration?.data?.[0]?.slug}`}
               className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
@@ -48,12 +51,12 @@ export default function Initiatives() {
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
                   dangerouslySetInnerHTML={{
-                    __html: inspiration?.data?.[0]?.title,
+                    __html: localized(inspiration?.data?.[0], "title"),
                   }}
                 />
               </div>
-            </Link>
-            <Link
+            </LocalizedLink>
+            <LocalizedLink
               to={`/blog/${inspiration?.data?.[1]?.slug}`}
               className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
@@ -70,12 +73,12 @@ export default function Initiatives() {
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
                   dangerouslySetInnerHTML={{
-                    __html: inspiration?.data?.[1]?.title,
+                    __html: localized(inspiration?.data?.[1], "title"),
                   }}
                 />
               </div>
-            </Link>
-            <Link
+            </LocalizedLink>
+            <LocalizedLink
               to={`/blog/${inspiration?.data?.[2]?.slug}`}
               className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
@@ -92,12 +95,12 @@ export default function Initiatives() {
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
                   dangerouslySetInnerHTML={{
-                    __html: inspiration?.data?.[2]?.title,
+                    __html: localized(inspiration?.data?.[2], "title"),
                   }}
                 />
               </div>
-            </Link>
-            <Link
+            </LocalizedLink>
+            <LocalizedLink
               to={`/blog/${inspiration?.data?.[3]?.slug}`}
               className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group"
               data-aos="zoom-in"
@@ -114,13 +117,13 @@ export default function Initiatives() {
                 <h4
                   className=" text-sm lg:text-xl font-bold text-white"
                   dangerouslySetInnerHTML={{
-                    __html: inspiration?.data?.[3]?.title,
+                    __html: localized(inspiration?.data?.[3], "title"),
                   }}
                 />
               </div>
-            </Link>
+            </LocalizedLink>
           </div>
-          <Link
+          <LocalizedLink
             to={`/blog/${inspiration?.data?.[4]?.slug}`}
             className="relative rounded-[8px] overflow-hidden h-50 lg:h-auto group "
             data-aos="fade-left"
@@ -138,11 +141,11 @@ export default function Initiatives() {
               <h4
                 className=" text-sm lg:text-xl font-bold text-white"
                 dangerouslySetInnerHTML={{
-                  __html: inspiration?.data?.[4]?.title,
+                  __html: localized(inspiration?.data?.[4], "title"),
                 }}
               />
             </div>
-          </Link>
+          </LocalizedLink>
         </div>
       </div>
     </div>
