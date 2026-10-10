@@ -5,26 +5,29 @@ import { z } from "zod";
 import { submitContact, submitSubscribe } from "../api/contact";
 import i18n from "@/i18n";
 
-// Zod validation schema for contact form
+// Zod validation schema for contact form.
+// Messages are raw Arabic strings that double as i18n keys; the forms translate
+// them with t() at render time (so they follow the active language — using
+// i18n.t() here would freeze them to the language at module-load time).
 export const contactSchema = z.object({
   name: z
     .string()
-    .min(2, i18n.t("الاسم يجب أن يكون أكثر من حرفين"))
-    .max(100, i18n.t("الاسم طويل جداً")),
+    .min(2, "الاسم يجب أن يكون أكثر من حرفين")
+    .max(100, "الاسم طويل جداً"),
   phone: z
     .string()
-    .min(10, i18n.t("رقم الهاتف غير صحيح"))
-    .max(15, i18n.t("رقم الهاتف طويل جداً")),
-  email: z.string().email(i18n.t("البريد الإلكتروني غير صحيح")),
+    .min(10, "رقم الهاتف غير صحيح")
+    .max(15, "رقم الهاتف طويل جداً"),
+  email: z.string().email("البريد الإلكتروني غير صحيح"),
   message: z
     .string()
-    .min(10, i18n.t("الرسالة قصيرة جداً"))
-    .max(5000, i18n.t("الرسالة طويلة جداً (حد أقصى 5000 حرف)")),
+    .min(10, "الرسالة قصيرة جداً")
+    .max(5000, "الرسالة طويلة جداً (حد أقصى 5000 حرف)"),
 });
 
 // Zod validation schema for subscribe form
 export const subscribeSchema = z.object({
-  email: z.string().email(i18n.t("البريد الإلكتروني غير صحيح")),
+  email: z.string().email("البريد الإلكتروني غير صحيح"),
 });
 
 export type ContactFormData = z.infer<typeof contactSchema>;

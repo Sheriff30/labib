@@ -45,7 +45,7 @@ function EmailForm() {
             />
             {form.formState.errors.email && (
               <p className="text-red-500 text-sm mt-1 absolute">
-                {form.formState.errors.email.message}
+                {t(form.formState.errors.email.message)}
               </p>
             )}
           </div>
