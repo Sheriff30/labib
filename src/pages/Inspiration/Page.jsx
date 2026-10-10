@@ -1,11 +1,15 @@
 import React, { useState, useMemo } from "react";
 import { Breadcrumbs } from "@/shared";
 import { useArticles } from "../../hooks/content";
-import { Link } from "react-router-dom";
 import { IMAGE_BASE_URL } from "../../lib/constants";
+import { useTranslation } from "react-i18next";
+import { useLocalized, LocalizedLink } from "@/lib/i18n";
 
 export default function Page() {
-  const [selectedCategory, setSelectedCategory] = useState("الكل");
+  const { t } = useTranslation();
+  const localized = useLocalized();
+  
+  const [selectedCategory, setSelectedCategory] = useState(t("الكل"));
   const [currentPage, setCurrentPage] = useState(1);
 
   const { data: inspiration, isLoading } = useArticles(
@@ -15,11 +19,11 @@ export default function Page() {
 
   // Get unique categories from the API data
   const categories = useMemo(() => {
-    if (!inspiration?.data) return [{ id: 1, title: "الكل" }];
+    if (!inspiration?.data) return [{ id: 1, title: t("الكل") }];
 
     const uniqueTags = [...new Set(inspiration.data.map((item) => item.tags))];
     return [
-      { id: 1, title: "الكل" },
+      { id: 1, title: t("الكل") },
       ...uniqueTags.map((tag, index) => ({ id: index + 2, title: tag })),
     ];
   }, [inspiration?.data]);
@@ -28,7 +32,7 @@ export default function Page() {
   const filteredData = useMemo(() => {
     if (!inspiration?.data) return [];
 
-    if (selectedCategory === "الكل") {
+    if (selectedCategory === t("الكل")) {
       return inspiration.data;
     }
 
@@ -39,7 +43,7 @@ export default function Page() {
     return (
       <div className="py-4 px-5">
         <div className="max-w-[1232px] mx-auto text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );
@@ -53,7 +57,10 @@ export default function Page() {
           data-aos-duration="600"
           data-aos-delay="100"
         >
-          <Breadcrumbs link1="/inspiration" title1="مساحة الإلهام" />
+          <Breadcrumbs
+            link1="/inspiration"
+            title1={t("مساحة الإلهام")}
+          />
         </div>
         <div className="flex justify-between items-center gap-2 md:gap-6 mb-8 flex-wrap">
           <div
@@ -62,7 +69,7 @@ export default function Page() {
             data-aos-duration="700"
             data-aos-delay="200"
           >
-            ما صنعنا
+            {t("ما صنعنا")}
           </div>
 
           <div
@@ -116,7 +123,7 @@ export default function Page() {
             data-aos-delay="400"
           >
             <p className="h4-light text-gray-500">
-              لا توجد مقالات متاحة في هذا التصنيف
+              {t("لا توجد مقالات متاحة في هذا التصنيف")}
             </p>
           </div>
         ) : (
@@ -128,7 +135,7 @@ export default function Page() {
             data-aos-delay="500"
           >
             {filteredData.map((item, index) => (
-              <Link
+              <LocalizedLink
                 to={`/blog/${item.slug}`}
                 key={item.id}
                 className={`rounded-lg overflow-hidden w-full relative cursor-pointer text-center gallery${
@@ -140,7 +147,7 @@ export default function Page() {
               >
                 <img
                   src={`${IMAGE_BASE_URL}${item.image}`}
-                  alt={item.title}
+                  alt={localized(item, "title")}
                   className="h-full w-full object-cover"
                 />
                 {/* Hover caption (tags / title / excerpt) — disabled; content was not useful on hover */}
@@ -154,7 +161,7 @@ export default function Page() {
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   />
                 </div> */}
-              </Link>
+              </LocalizedLink>
             ))}
           </div>
         )}
@@ -175,7 +182,7 @@ export default function Page() {
               data-aos-duration="500"
               data-aos-delay="500"
             >
-              السابق
+              {t("السابق")}
             </button>
 
             <div
@@ -213,7 +220,7 @@ export default function Page() {
               data-aos-duration="500"
               data-aos-delay="500"
             >
-              التالي
+              {t("التالي")}
             </button>
           </div>
         )}

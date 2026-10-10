@@ -1,10 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import FieldsSwiper from "./FieldsSwiper";
 import { usePage } from "../../../hooks/content";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
-import { Link } from "react-router-dom";
+import { LocalizedLink, useLocalized } from "@/lib/i18n";
 
 export default function Fields() {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const { data } = usePage("fields");
 
   const fields = data?.content
@@ -16,26 +19,26 @@ export default function Fields() {
       <div className="max-w-[1232px] mx-auto">
         <div className="flex gap-[24px] items-center justify-center text-center flex-col lg:flex-row lg:justify-between mb-[56px]">
           <h1 className="h2-bold" data-aos="fade-down" data-aos-duration="600">
-            رحلة تعليمية شاملة لأجيال المستقبل
+            {t("رحلة تعليمية شاملة لأجيال المستقبل")}
           </h1>
-          <a
-            href="/fields"
+          <LocalizedLink
+            to="/fields"
             className="h4-link text-[#F06827] hover:text-[#e55a1f] transition-colors duration-300"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="200"
           >
-            ما نقدّم
-          </a>
+            {t("ما نقدّم")}
+          </LocalizedLink>
         </div>
         {/* Mobile Swiper */}
         <FieldsSwiper fields={fields} />
         {/* Desktop grid */}
         <div className="hidden lg:grid grid-cols-3 gap-[16px]">
           {fields?.map((field, index) => {
-            const { title, text, image } = field?.data || {};
+            const { image } = field?.data || {};
             return (
-              <Link
+              <LocalizedLink
                 key={index}
                 className="flex flex-col bg-white px-[16px] py-[70px] items-center text-center xl:items-start xl:text-start shadow-[0px_4px_16px_0px_#24252E05] rounded-[8px] hover:shadow-lg transition-shadow duration-600 group cursor-pointer"
                 data-aos="fade-up"
@@ -45,7 +48,7 @@ export default function Fields() {
               >
                 <img
                   src={`${IMAGE_BASE_URL}${image}`}
-                  alt={title}
+                  alt={localized(field?.data, "title")}
                   className="mb-[24px] max-w-[160px]  h-[100px]"
                   data-aos="zoom-in"
                   data-aos-duration="600"
@@ -57,16 +60,16 @@ export default function Fields() {
                   data-aos-duration="600"
                   data-aos-delay={index * 150 + 300}
                 >
-                  {title}
+                  {localized(field?.data, "title")}
                 </h2>
                 <p
                   className=" group-hover:text-orange transition-colors duration-600 font-light  text-[20px]"
-                  dangerouslySetInnerHTML={{ __html: text }}
+                  dangerouslySetInnerHTML={{ __html: localized(field?.data, "text") }}
                   data-aos="fade-up"
                   data-aos-duration="600"
                   data-aos-delay={index * 150 + 400}
                 />
-              </Link>
+              </LocalizedLink>
             );
           })}
         </div>

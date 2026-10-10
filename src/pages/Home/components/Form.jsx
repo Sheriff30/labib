@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useContactForm } from "../../../hooks/contact";
 
 export default function Form() {
+  const { t } = useTranslation();
   const { form, onSubmit, isSubmitting } = useContactForm();
   const [submitMessage, setSubmitMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleSubmit = async (data) => {
     const result = await onSubmit(data);
     setSubmitMessage(result.message);
+    setSubmitSuccess(Boolean(result.success));
 
     setTimeout(() => setSubmitMessage(""), 3000);
   };
@@ -35,7 +39,7 @@ export default function Form() {
             data-aos-duration="600"
             data-aos-delay="200"
           >
-            اتصل بـ لبيب
+            {t("اتصل بـ لبيب")}
           </h2>
 
           <p
@@ -44,8 +48,7 @@ export default function Form() {
             data-aos-duration="600"
             data-aos-delay="400"
           >
-            كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
-            المستقبل
+            {t("كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال المستقبل")}
           </p>
         </div>
         <form
@@ -59,7 +62,7 @@ export default function Form() {
             htmlFor="name"
             className="flex flex-col gap-[4px] body-medium "
           >
-            الإسم
+            {t("الإسم")}
             <input
               {...form.register("name")}
               type="text"
@@ -76,7 +79,7 @@ export default function Form() {
             htmlFor="phone"
             className="flex flex-col gap-[4px] body-medium"
           >
-            رقم الجوال
+            {t("رقم الجوال")}
             <input
               {...form.register("phone")}
               type="tel"
@@ -93,7 +96,7 @@ export default function Form() {
             htmlFor="email"
             className="col-span-full flex flex-col gap-[4px] body-medium"
           >
-            البريد الالكتروني
+            {t("البريد الالكتروني")}
             <input
               {...form.register("email")}
               type="email"
@@ -110,7 +113,7 @@ export default function Form() {
             htmlFor="message"
             className="col-span-full flex flex-col gap-[4px] body-medium"
           >
-            التفاصيل
+            {t("التفاصيل")}
             <textarea
               {...form.register("message")}
               id="message"
@@ -129,7 +132,7 @@ export default function Form() {
             disabled={isSubmitting}
             className="col-span-full p-[10px] border rounded-[16px] cursor-pointer cta-large flex items-center gap-[8px] justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
           >
-            {isSubmitting ? "جاري الإرسال..." : "إرسال"}
+            {isSubmitting ? t("جاري الإرسال...") : t("إرسال")}
             <img src="/submit.svg" alt="submit" className="w-[25px] h-[24px]" />
           </button>
 
@@ -137,7 +140,7 @@ export default function Form() {
           {submitMessage && (
             <div
               className={`col-span-full p-3 rounded-lg text-center ${
-                submitMessage.includes("بنجاح")
+                submitSuccess
                   ? "bg-green-500/20 text-green-200 border border-green-500/30"
                   : "bg-red-500/20 text-red-200 border border-red-500/30"
               }`}

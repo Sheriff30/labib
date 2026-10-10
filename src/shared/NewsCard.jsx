@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { LocalizedLink } from "@/lib/i18n";
 
 const arabicMonths = {
   0: "يناير",
@@ -77,8 +77,8 @@ export default function NewsCard({
   }
 
   return (
-    <Link to={link} className={cardClassName}>
+    <LocalizedLink to={link} className={cardClassName}>
       {content}
-    </Link>
+    </LocalizedLink>
   );
 }

@@ -1,16 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Logo, Menu } from "@/shared";
+import { useLang } from "@/i18n/LangProvider";
+import { LocalizedLink, localizedPath } from "@/lib/i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
+  const { lang } = useLang();
+  const home = `/${lang}`;
 
   const handleContactClick = (e) => {
     e.preventDefault();
-    if (location.pathname === "/") {
+    if (location.pathname === home) {
       // If already on home page, just scroll to contact
       const contactElement = document.getElementById("contact");
       if (contactElement) {
@@ -18,7 +25,7 @@ export default function Header() {
       }
     } else {
       // If on another page, navigate to home with hash
-      navigate("/#contact");
+      navigate(`${home}#contact`);
     }
   };
 
@@ -39,7 +46,7 @@ export default function Header() {
 
   // Handle hash navigation
   useEffect(() => {
-    if (location.pathname === "/" && location.hash === "#contact") {
+    if (location.pathname === home && location.hash === "#contact") {
       // Add a delay to ensure the page is fully rendered
       const scrollToContact = () => {
         const contactElement = document.getElementById("contact");
@@ -88,57 +95,27 @@ export default function Header() {
   }
 
   const navItems = [
-    {
-      label: "حكاية لبيب",
-      href: "/about",
-    },
-    {
-      label: "ما نقدّم",
-      href: "/fields",
-    },
-    {
-      label: "ما صنعنا",
-      href: "/initiatives",
-    },
-    {
-      label: "مكتبة لبيب",
-      href: "/library",
-    },
+    { label: t("حكاية لبيب"), href: "/about" },
+    { label: t("ما نقدّم"), href: "/fields" },
+    { label: t("ما صنعنا"), href: "/initiatives" },
+    { label: t("مكتبة لبيب"), href: "/library" },
   ];
 
   const menuNavItems = [
-    {
-      label: "الرئيسية",
-      href: "/",
-    },
-    {
-      label: "حكاية لبيب",
-      href: "/about",
-    },
-    {
-      label: "ما نقدّم",
-      href: "/fields",
-    },
-    {
-      label: "ما صنعنا",
-      href: "/initiatives",
-    },
-    {
-      label: "مكتبة لبيب",
-      href: "/library",
-    },
-    {
-      label: "اتصل بنا",
-      href: "/#contact",
-    },
+    { label: t("الرئيسية"), href: "/" },
+    { label: t("حكاية لبيب"), href: "/about" },
+    { label: t("ما نقدّم"), href: "/fields" },
+    { label: t("ما صنعنا"), href: "/initiatives" },
+    { label: t("مكتبة لبيب"), href: "/library" },
+    { label: t("اتصل بنا"), href: "/#contact", contact: true },
   ];
 
   let style = "";
 
   if (
-    location.pathname === "/" ||
-    location.pathname === "/about" ||
-    location.pathname === "/library"
+    location.pathname === home ||
+    location.pathname === `${home}/about` ||
+    location.pathname === `${home}/library`
   ) {
     style = isScrolled
       ? "bg-white/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-30 shadow-md"
@@ -158,16 +135,16 @@ export default function Header() {
       >
         <header className="max-w-[1232px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-[83px]">
-            <Link to="/">
+            <LocalizedLink to="/">
               <Logo className="w-[70px] h-[50px] lg:w-[103px] lg:h-[64px]" />
-            </Link>
+            </LocalizedLink>
 
             <a
-              href="/#contact"
+              href={`${home}#contact`}
               onClick={handleContactClick}
               className="cta-large bg-black text-white py-1 px-[46px] rounded-[16px] outline-none border-none hidden lg:block"
             >
-              سجّل اهتمامك{" "}
+              {t("سجّل اهتمامك")}{" "}
             </a>
           </div>
           <ul className="flex gap-[40px] items-center">
@@ -175,12 +152,8 @@ export default function Header() {
               return (
                 <li key={index} className="cursor-pointer hidden lg:block">
                   <a
-                    href={link.href}
-                    onClick={
-                      link.label === "اتصل بنا"
-                        ? handleNavContactClick
-                        : undefined
-                    }
+                    href={localizedPath(link.href, lang)}
+                    onClick={link.contact ? handleNavContactClick : undefined}
                     className="body-medium"
                   >
                     {link.label}
@@ -188,6 +161,10 @@ export default function Header() {
                 </li>
               );
             })}
+
+            <li className="hidden lg:block">
+              <LanguageSwitcher />
+            </li>
 
             <li className="cursor-pointer" onClick={handleMenuOpen}>
               <Menu className="w-[20px] h-[20px] lg:w-[35px] lg:h-[33px]" />
@@ -211,20 +188,27 @@ export default function Header() {
           }`}
         >
           <div className="flex justify-between gap-1 items-center">
-            <div className="h2-light">القائمة</div>
-            <img
-              src="/close.svg"
-              alt="close button"
-              onClick={handleMenuOpen}
-              className="cursor-pointer"
-            />
+            <div className="h2-light">{t("القائمة")}</div>
+            <div className="flex items-center gap-3">
+              <LanguageSwitcher />
+              <img
+                src="/close.svg"
+                alt="close button"
+                onClick={handleMenuOpen}
+                className="cursor-pointer"
+              />
+            </div>
           </div>
 
           <ul className="flex flex-col gap-[16px]">
             {menuNavItems.map((link, index) => {
               return (
                 <li key={index}>
-                  <a href={link.href} className="h3-medium">
+                  <a
+                    href={localizedPath(link.href, lang)}
+                    onClick={link.contact ? handleContactClick : undefined}
+                    className="h3-medium"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -233,11 +217,11 @@ export default function Header() {
           </ul>
 
           <a
-            href="/#contact"
+            href={`${home}#contact`}
             onClick={handleContactClick}
             className="cta-large bg-black text-white text-center py-1 px-[46px] rounded-[16px] outline-none border-none block lg:hidden"
           >
-            سجّل اهتمامك{" "}
+            {t("سجّل اهتمامك")}{" "}
           </a>
         </div>
       </div>

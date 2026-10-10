@@ -1,13 +1,19 @@
 import { SectionHeader } from "@/pages/Library/components";
 import { NewsCard } from "@/shared";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { useLocalized } from "@/lib/i18n";
 function Latest({ data }) {
-  const { items, title } = data?.data || {};
+  const localized = useLocalized();
+  const { items } = data?.data || {};
 
   return (
     <div className="flex flex-col gap-8 ">
       <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
-        <SectionHeader src="/latest.svg" title={title} link="/latest" />
+        <SectionHeader
+          src="/latest.svg"
+          title={localized(data?.data, "title")}
+          link="/latest"
+        />
       </div>
       <div className="grid gap-5 lg:grid-cols-2  ">
         <div
@@ -17,16 +23,16 @@ function Latest({ data }) {
           data-aos-delay="200"
         >
           <NewsCard
-            title={items?.[0]?.title}
-            description={items?.[0]?.content}
+            title={localized(items?.[0], "title")}
+            description={localized(items?.[0], "content")}
             date={items?.[0]?.created_at}
             src={`${IMAGE_BASE_URL}${items?.[0]?.image}`}
             link={`/blog/${items?.[0]?.slug}`}
             className="max-h-[200px] lg:max-h-[140px]"
           />
           <NewsCard
-            title={items?.[1]?.title}
-            description={items?.[1]?.content}
+            title={localized(items?.[1], "title")}
+            description={localized(items?.[1], "content")}
             date={items?.[1]?.created_at}
             src={`${IMAGE_BASE_URL}${items?.[1]?.image}`}
             link={`/blog/${items?.[1]?.slug}`}
@@ -41,7 +47,7 @@ function Latest({ data }) {
         >
           <NewsCard
             variant="compact"
-            title={items?.[2]?.title}
+            title={localized(items?.[2], "title")}
             date={items?.[2]?.created_at}
             src={`${IMAGE_BASE_URL}${items?.[2]?.image}`}
             link={`/blog/${items?.[2]?.slug}`}
@@ -49,7 +55,7 @@ function Latest({ data }) {
           />
           <NewsCard
             variant="compact"
-            title={items?.[3]?.title}
+            title={localized(items?.[3], "title")}
             date={items?.[3]?.created_at}
             src={`${IMAGE_BASE_URL}${items?.[3]?.image}`}
             link={`/blog/${items?.[3]?.slug}`}

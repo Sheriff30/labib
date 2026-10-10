@@ -1,9 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Breadcrumbs } from "@/shared";
 import { IMAGE_BASE_URL } from "../../../lib/constants";
+import { useLocalized } from "@/lib/i18n";
 
 export default function Hero({ data }) {
-  const { image, text, title } = data?.data || {};
+  const { t } = useTranslation();
+  const localized = useLocalized();
+  const { image } = data?.data || {};
   return (
     <div className="bg-yellow relative">
       <img
@@ -19,12 +23,12 @@ export default function Hero({ data }) {
       />
       <div className=" max-w-[1232px] pb-[50px]  mx-auto flex flex-col pt-[120px] lg:pt-[180px] px-[20px]  relative z-20 gap-5 lg:gap-5 ">
         <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="200">
-          <Breadcrumbs title1="حكاية لبيب" className="text-white" />
+          <Breadcrumbs title1={t("حكاية لبيب")} className="text-white" />
         </div>
         <div className="flex flex-col gap-10">
           <h1
             className="display2-bold text-white text-center"
-            dangerouslySetInnerHTML={{ __html: title }}
+            dangerouslySetInnerHTML={{ __html: localized(data?.data, "title") }}
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay="400"
@@ -32,7 +36,7 @@ export default function Hero({ data }) {
           <div className="flex items-center justify-center gap-[50px] flex-wrap ">
             <div
               className="text-white max-w-[600px] h4-medium text-center xl:text-start"
-              dangerouslySetInnerHTML={{ __html: text }}
+              dangerouslySetInnerHTML={{ __html: localized(data?.data, "text") }}
               data-aos="fade-right"
               data-aos-duration="700"
               data-aos-delay="600"

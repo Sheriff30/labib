@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Hero } from "@/pages/Library/components";
 import Latest from "./components/Latest";
 import Banner from "./components/Banner";
@@ -9,6 +10,7 @@ import { usePage } from "../../hooks/content";
 import EmailForm from "./components/EmailForm";
 
 export default function Page() {
+  const { t } = useTranslation();
   const { data, isLoading } = usePage("library");
 
   const latest = data?.content?.filter(
@@ -26,7 +28,7 @@ export default function Page() {
     return (
       <div className="py-4 px-5 h-[664px] flex justify-center items-center bg-secondary-default">
         <div className="max-w-[1232px] mx-auto text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );

@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import { Hero } from "@/pages/About/components";
 import { Partners } from "@/shared";
 import { usePage } from "../../hooks/content";
 import { cn } from "../../lib/utils";
 import { IMAGE_BASE_URL } from "../../lib/constants";
+import { useLocalized } from "@/lib/i18n";
 
 export default function Page() {
+  const { t } = useTranslation();
+  const localized = useLocalized();
   const { data: about, isLoading } = usePage("about");
 
   const hero = about?.content?.filter(
@@ -22,7 +26,7 @@ export default function Page() {
     return (
       <div className="py-4 px-5 h-[664px] flex justify-center items-center bg-yellow">
         <div className="max-w-[1232px] mx-auto text-center">
-          جاري التحميل...
+          {t("جاري التحميل...")}
         </div>
       </div>
     );
@@ -44,11 +48,11 @@ export default function Page() {
             data-aos-duration="600"
             data-aos-delay="200"
           >
-            {text_section?.data?.title}
+            {localized(text_section?.data, "title")}
           </h2>
           <p
             className="h4-light"
-            dangerouslySetInnerHTML={{ __html: text_section?.data?.text }}
+            dangerouslySetInnerHTML={{ __html: localized(text_section?.data, "text") }}
             data-aos="fade-up"
             data-aos-duration="700"
             data-aos-delay="400"
@@ -58,7 +62,7 @@ export default function Page() {
       <div className="px-5 py-8 lg:py-30">
         <div className="max-w-[1232px] mx-auto flex flex-col gap-10 lg:gap-30 ">
           {text_with_image?.map((item, index) => {
-            const { title, text, image, image_position } = item?.data || {};
+            const { title, image, image_position } = item?.data || {};
             return (
               <Fragment key={title}>
                 <div
@@ -93,11 +97,11 @@ export default function Page() {
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 400}
                     >
-                      {title}
+                      {localized(item?.data, "title")}
                     </h2>
                     <div
                       className="h4-light values"
-                      dangerouslySetInnerHTML={{ __html: text }}
+                      dangerouslySetInnerHTML={{ __html: localized(item?.data, "text") }}
                       data-aos="fade-up"
                       data-aos-duration="600"
                       data-aos-delay={index * 200 + 500}

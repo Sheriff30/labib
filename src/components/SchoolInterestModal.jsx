@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useContactForm } from "../hooks/contact";
 
 export default function SchoolInterestModal({ isOpen, onClose }) {
+  const { t } = useTranslation();
   const { form, onSubmit, isSubmitting } = useContactForm();
   const [submitMessage, setSubmitMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -35,10 +38,11 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
 
     const result = await onSubmit(payload);
     setSubmitMessage(result.message);
+    setSubmitSuccess(Boolean(result.success));
 
     setTimeout(() => {
       setSubmitMessage("");
-      if (result.message.includes("بنجاح")) {
+      if (result.success) {
         onClose();
         form.reset();
       }
@@ -65,7 +69,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
           onClick={onClose}
           className="absolute top-[16px] left-[16px] z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-colors hover:bg-white/30 lg:text-white"
           type="button"
-          aria-label="إغلاق النموذج"
+          aria-label={t("إغلاق النموذج")}
         >
           <svg
             width="18"
@@ -100,10 +104,11 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
           />
 
           <div className="relative z-10 flex flex-col gap-[20px]">
-            <h2 className="h3-bold leading-tight">سجّل اهتمام مدرستك الآن</h2>
+            <h2 className="h3-bold leading-tight">{t("سجّل اهتمام مدرستك الآن")}</h2>
             <p className="body-light text-white/80">
-              كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال
-              المستقبل. سجّل بيانات مدرستك وسيتواصل معك فريق لبيب في أقرب وقت.
+              {t(
+                "كن شريكًا في ابتكار تجارب ملهمة تترك أثرًا دائمًا في حياة أجيال المستقبل. سجّل بيانات مدرستك وسيتواصل معك فريق لبيب في أقرب وقت."
+              )}
             </p>
             <span className="mt-[8px] h-[4px] w-[56px] rounded-full bg-orange" />
           </div>
@@ -119,7 +124,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               htmlFor="school-name"
               className="flex flex-col gap-[6px] body-medium text-navy"
             >
-              الإسم
+              {t("الإسم")}
               <input
                 {...form.register("name")}
                 type="text"
@@ -137,7 +142,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               htmlFor="school-phone"
               className="flex flex-col gap-[6px] body-medium text-navy"
             >
-              رقم الجوال
+              {t("رقم الجوال")}
               <input
                 {...form.register("phone")}
                 type="tel"
@@ -155,7 +160,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               htmlFor="school-email"
               className="flex flex-col gap-[6px] body-medium text-navy"
             >
-              البريد الالكتروني
+              {t("البريد الالكتروني")}
               <input
                 {...form.register("email")}
                 type="email"
@@ -173,7 +178,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               htmlFor="school-message"
               className="flex flex-col gap-[6px] body-medium text-navy"
             >
-              التفاصيل
+              {t("التفاصيل")}
               <textarea
                 {...form.register("message")}
                 id="school-message"
@@ -192,7 +197,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               disabled={isSubmitting}
               className="flex cursor-pointer items-center justify-center gap-[8px] rounded-[16px] bg-orange p-[12px] cta-large text-white transition-colors hover:bg-[#e55a1f] disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {isSubmitting ? "جاري الإرسال..." : "إرسال"}
+              {isSubmitting ? t("جاري الإرسال...") : t("إرسال")}
               <img
                 src="/submit.svg"
                 alt="submit"
@@ -203,7 +208,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
             {submitMessage && (
               <div
                 className={`rounded-[12px] p-3 text-center ${
-                  submitMessage.includes("بنجاح")
+                  submitSuccess
                     ? "border border-green-500/30 bg-green-700 text-white"
                     : "border border-red/30 bg-red/10 text-red"
                 }`}
