@@ -133,7 +133,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               />
               {form.formState.errors.name && (
                 <span className="text-sm text-red">
-                  {form.formState.errors.name.message}
+                  {t(form.formState.errors.name.message)}
                 </span>
               )}
             </label>
@@ -151,7 +151,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               />
               {form.formState.errors.phone && (
                 <span className="text-sm text-red">
-                  {form.formState.errors.phone.message}
+                  {t(form.formState.errors.phone.message)}
                 </span>
               )}
             </label>
@@ -169,7 +169,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               />
               {form.formState.errors.email && (
                 <span className="text-sm text-red">
-                  {form.formState.errors.email.message}
+                  {t(form.formState.errors.email.message)}
                 </span>
               )}
             </label>
@@ -187,7 +187,7 @@ export default function SchoolInterestModal({ isOpen, onClose }) {
               />
               {form.formState.errors.message && (
                 <span className="text-sm text-red">
-                  {form.formState.errors.message.message}
+                  {t(form.formState.errors.message.message)}
                 </span>
               )}
             </label>

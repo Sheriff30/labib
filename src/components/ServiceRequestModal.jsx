@@ -148,7 +148,7 @@ export default function ServiceRequestModal({
                 />
                 {form.formState.errors.name && (
                   <span className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.name.message}
+                    {t(form.formState.errors.name.message)}
                   </span>
                 )}
               </label>
@@ -166,7 +166,7 @@ export default function ServiceRequestModal({
                 />
                 {form.formState.errors.phone && (
                   <span className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.phone.message}
+                    {t(form.formState.errors.phone.message)}
                   </span>
                 )}
               </label>
@@ -184,7 +184,7 @@ export default function ServiceRequestModal({
                 />
                 {form.formState.errors.email && (
                   <span className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.email.message}
+                    {t(form.formState.errors.email.message)}
                   </span>
                 )}
               </label>
@@ -202,7 +202,7 @@ export default function ServiceRequestModal({
                 />
                 {form.formState.errors.message && (
                   <span className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.message.message}
+                    {t(form.formState.errors.message.message)}
                   </span>
                 )}
               </label>
